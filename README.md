@@ -119,22 +119,215 @@ Projektzeitleiste und Meilensteine
 
 | Sprint | Zeitpunkt     | Arbeitsschritte                                                                          |
 | -------- | --------------- | ------------------------------------------------------------------------------------------ |
-| 1      | 5.5. - 9.5.25 | GitHub–Obsidian Setup, Architekturplanung                                               |
-| 2      | 9.5. - 2.6.25 | Start Entwicklung der Grundarchitektur                                                   |
-| 2      | 9.5. - 2.6.25 | GUI-Planung, Erste Umsetzung der GUI                                                     |
-| 2      | 9.5. - 2.6.25 | Verknüpfung der Elemente, API Push-Notifications, Erste Testphase                       |
-| 3      | 2.6. - 9.7.25 | Verbesserung der App-Visualisierung, Statistiken, Abschluss der Datenbankfunktionalität |
-| 3      | 2.6. - 9.7.25 | Vollendung der Dokumentation                                                             |
-| 3      | 2.6. - 9.7.25 | Vorbereitung der Präsentation, Vollendung des Projekts, Abgabe                          |
+| 1      | 27.10.25 - 17.11.25 | Repo Setup & Jira Setup, Projektkonzipierung, Technisches Design                                              |
+| 2      | 17.11.25 - 15.12.25 | Start Entwicklung der Grundarchitektur (Kubernetes, Amazon EC2)                                                 |
+| 2      | 17.11.25 - 15.12.25 | GUI-Planung, Erste Umsetzung der GUI                                                     |
+| 2      | 17.11.25 - 15.12.25 | Verknüpfung der Elemente, DevOps Pipelines, Erste Testphase                       |
+| 3      | 15.12.25 - 28.01.25| Verbesserungen und Abschluss der Funktionalitäten |
+| 3      | 15.12.25 - 28.01.25 | Vollendung der Dokumentation                                                             |
+| 3      | 15.12.25 - 28.01.25 | Vorbereitung der Präsentation, Vollendung des Projekts, Abgabe                          |
 
-![](assets/20250708_175314_image.png)
+## 1.6 Sprint-Dokumentation
+### 1.6.1 Sprint 1
+#### **Zeitraum**
 
-***✨ Alle ✨ markierten Erweiterungen:***
+27.10.25 - 17.11.25
 
-1. **🐘 PostgreSQL Database Migration** ✨ NEU
-2. **🔄 SQLAlchemy ORM Integration** ✨ NEU
-3. **🌤️ Weather API Service Development** ✨ NEU
-4. **☁️ AWS EC2 Deployment & CI/CD** ✨ NEU
-5. **🏗️ Microservices Architektur Erweiterung** ✨ NEU
+---
 
-Bei diesen Erweiterungen handelt es sich um erreichte Ziele ausserhalb des Ursprünglichen Projektscopes. Diese Erweiterungen wurden nach Absprache mit dem Projektmanagement-Dozenten im Sprint 3 implementiert, um das Projekt in Sachen Cloud-Native zu festigen.
+#### **Sprintziele**
+
+	Repo Setup, Projektkonzipierung, Technisches Design
+
+---
+
+
+#### **User Stories mit Akzeptanzkriterien**
+---
+
+📍​**User Story 1:**
+
+
+| Title:                   | Priority: | Estimate: |
+| -------------------------- | ----------- | ----------- |
+| Repo-Setup & Jira Setup | High      | 2h        |
+
+
+
+Als Entwickler
+Möchte ich **Meinen Text-Editor oder IDE zu meinem Github-Repo verknüpfen und meine Jira Seite für die User-Stories / Tasks vorbereiten**
+damit ich **Ready bin, um das Projekt zu entwickeln und meinen Vortschritt festzuhalten**.
+
+**Akzeptanzkriterien:**
+
+- Ein verfügbares Repository für die Dokumentation der Semesterarbeit
+- Präferierter IDE / Text-Editor welcher aufs Repo zugreifen kann und aktiv änderungen vornimmt
+- Meine User Stories im Jira festhalten
+
+---
+
+📍​**User Story 2:**
+
+
+| Title:             | Priority: | Estimate: |
+| -------------------- | ----------- | ----------- |
+| Projektkonzipierung | High      | 1d        |
+
+
+
+Als Projektleiterin
+Möchte ich **Projektverlauf planen und die konzipierung verfassen**
+damit ich **einen ersten Anhaltspunkt zum Architekturdesign habe, an welches sich das Projekt richten kann**.
+
+
+**Akzeptanzkriterien:**
+
+- Ein verfügbares KanBan Board mit den einzelnen Sprints und deren Ziele
+- Die Funktionen Daten zu definieren und Cheklisten in den Zielen aufzubauen
+
+---
+
+📍​**User Story 3:**
+
+
+| Title:              | Priority: | Estimate: |
+| --------------------- | ----------- | ----------- |
+| Technisches Design | Medium    | 1d        |
+
+Als Architekt
+Möchte ich **Einen ersten Entwurf meiner Grundarchitektur erstellen**
+damit ich **meine Stakeholder den Fortschritt mitverfolgen können und ich Übersicht über die Aufgaben behalte**.
+**Akzeptanzkriterien:**
+
+- Ein Mermaid Diagramm mit der groben Vorstellung der Architektur
+- Verständliche Beschriftung, Aufbau entsprechend der definierten Sachmittel
+
+---
+
+#### **Aufgabenübersicht Sprint 1**
+
+
+| Aufgabe                  | Status              |
+| -------------------------- | --------------------- |
+| User Story 1 | Alternativ erledigt |
+| User Story 2       | erledigt            |
+| User Story 3    | erledigt            |
+
+---
+
+#### **Sprint Review**
+
+⭐​​**Was wurde erreicht?**
+
+- GitHub repo wurde erstellt
+- IDE wurde mit GitHub verknüpft - Es wurde auf andere Lösung gewechselt - Da bessere Optionen zur Entwicklung
+- Erster Entwurf einer groben Architekturplanung
+- KanBan Board wurde erstellt - Microsoft Lists
+
+![alt text](image-2.png)
+*_KanBan Angfangs Sprint_
+
+![alt text](image-3.png)
+*_KanBan Ende Sprint_
+
+#### 🏔️​ **Herausforderungen**
+
+- Microsoft Lists bietet nicht alle benötigten Funktionen an. Es wurde am Anfang des 2. Sprints eine Ausweichmöglichkeit definiert
+- Sprint 1 Zeitraum sehr klein
+
+
+#### 📚​ **Lessons Learned**
+
+- Mehr Austausch mit den Team-Kollegen und Collaboraters pflegen, um Lösungen zu vergleichen und voneinander zu profitieren. Durch einen Tipp von Teamkollegen, bin ich vollständig auf Visual-Studio gewechselt, da es wesentlich mehr Möglichkeiten anbietet, als Obsidian.
+
+---
+
+#### **Retrospektive**
+
+
+| **📈 More Of**                                                                                                                                                                                             | **📉 Less Of**                                                                                       | **✅ Keep Doing**                                                                                                                                                       | **🛑 Stop Doing**                                                                                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Mehr Austausch mit Team-Kollegen und Collaboraters pflegen**<br>• Lösungen vergleichen und voneinander profitieren <br>• Durch Teamkollegen-Tipp erfolgreich von Obsidian zu Visual Studio gewechselt | **Sprint-Zeitraum zu klein wählen**<br>• Sprint 1 Zeitraum war zu kurz für effektive Arbeitsweise | **Offenheit für Tool-Empfehlungen** <br>• Visual Studio bietet wesentlich mehr Möglichkeiten als Obsidian <br><br>** Proaktive Lösungssuche bei Tool-Limitationen** | ***Abhängigkeit von unvollständigen Tools ohne Backup-Plan***<br>• Microsoft Lists bietet nicht alle benötigten Funktionen <br>• Ausweichmöglichkeit wurde erst am Anfang des 2. Sprints definiert |
+
+#### **Ausblick auf Sprint 2**
+
+- Wechsel / Migration des KanBan-Board - **Tool-Migration abschließen** - Vollständiger Wechsel zu Visual Studio
+- Start Entwicklung der Grundarchitektur
+- GUI Planung und erste Umsetzung
+### 1.6.2 Sprint 2
+### 1.6.3 Sprint 3
+
+# 2 Technische Dokumentation
+## 2.1 Architektur Übersicht
+
+Technische übersicht zur Migrierten Architektur:
+``` Mermaid
+graph TB
+    %% External Users and Services
+    User[👥 Benutzer<br/>HTTPS Zugriff]
+    GitHub[🔄 GitHub Actions<br/>CI/CD Pipeline]
+    WeatherAPI[☁️ OpenWeatherMap<br/>Weather API]
+    
+    %% AWS Cloud
+    subgraph AWS["☁️ AWS Cloud (eu-central-1)"]
+        subgraph EC2["🖥️ EC2 Instance (t3.medium)"]
+            subgraph K8s["⎈ Kubernetes Cluster (k3s)"]
+                
+                %% Ingress
+                Ingress[⚡ Nginx Ingress Controller<br/>Port 80/443]
+                
+                %% Kubernetes Services
+                subgraph Namespace["📦 Namespace: trackmygym"]
+                    Frontend[🎨 Frontend Pod<br/>React/Vue.js UI]
+                    UserSvc[👤 User Service Pod<br/>Auth & Profile]
+                    StatsSvc[📊 Stats Service Pod<br/>Analytics]
+                    WorkoutSvc[💪 Workout Service Pod<br/>Training Plans]
+                    WeatherSvc[🌤️ Weather Service Pod<br/>Weather Integration]
+                    DB[(🗄️ PostgreSQL Pod<br/>users + workouts)]
+                end
+                
+                %% Supporting Components
+                HPA[📈 HPA<br/>Auto-Scaling]
+            end
+        end
+    end
+    
+    %% Main User Flow
+    User -->|HTTPS| Ingress
+    Ingress -->|Routes| Frontend
+    
+    %% Frontend to Backend Services
+    Frontend -->|API| UserSvc
+    Frontend -->|API| StatsSvc
+    Frontend -->|API| WorkoutSvc
+    Frontend -->|API| WeatherSvc
+    
+    %% Services to Database
+    UserSvc --> DB
+    StatsSvc --> DB
+    WorkoutSvc --> DB
+    
+    %% External API
+    WeatherSvc -->|HTTP| WeatherAPI
+    
+    %% CI/CD Flow
+    GitHub -->|Deploy| K8s
+    
+    %% Auto-Scaling
+    HPA -.->|Scales| Namespace
+    
+    %% Styling
+    classDef external fill:#e3f2fd,stroke:#1976d2,stroke-width:3px,color:#0d47a1
+    classDef aws fill:#fff3e0,stroke:#f57c00,stroke-width:3px,color:#e65100
+    classDef k8s fill:#e8f5e9,stroke:#43a047,stroke-width:3px,color:#2e7d32
+    classDef service fill:#bbdefb,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    classDef support fill:#fff9c4,stroke:#fbc02d,stroke-width:2px,color:#f57f17
+    classDef db fill:#b3e5fc,stroke:#0288d1,stroke-width:3px,color:#01579b
+    
+    class User,GitHub,WeatherAPI external
+    class AWS,EC2 aws
+    class K8s,Namespace k8s
+    class Frontend,UserSvc,StatsSvc,WorkoutSvc,WeatherSvc,Ingress service
+    class HPA support
+    class DB db
+```
