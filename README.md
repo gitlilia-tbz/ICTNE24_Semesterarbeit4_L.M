@@ -127,6 +127,17 @@ Projektzeitleiste und Meilensteine
 | 3      | 15.12.25 - 28.01.25 | Vollendung der Dokumentation                                                             |
 | 3      | 15.12.25 - 28.01.25 | Vorbereitung der Präsentation, Vollendung des Projekts, Abgabe                          |
 
+## 1.4 Risiko-Matrix
+Übersicht der Risiken nach Wahrscheinlichkeit und Auswirkung
+![alt text](image-1.png)
+
+Dies ist ein test-Text
+
+## 1.5 SWOT-Analyse 
+Stärken, Schwächen, Chancen und Risiken des Projektes innerhalb der SWOT Analyse:
+
+![alt text](image.png)
+
 ## 1.6 Sprint-Dokumentation
 ### 1.6.1 Sprint 1
 #### **Zeitraum**
