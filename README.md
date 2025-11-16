@@ -284,10 +284,9 @@ damit ich **meine Stakeholder den Fortschritt mitverfolgen können und ich Über
 
 ⭐​​**Was wurde erreicht?**
 
-- GitHub repo wurde erstellt
-- IDE wurde mit GitHub verknüpft - Es wurde auf andere Lösung gewechselt - Da bessere Optionen zur Entwicklung
-- Erster Entwurf einer groben Architekturplanung
-- KanBan Board wurde erstellt - Microsoft Lists
+- GitHub repo & Jira Setup erledigt
+- Projektkonzipierung wurde erstellt
+- Erster Entwurf für das Technische Design wurde erstellt
 
 ![alt text](image-2.png)
 *_KanBan Angfangs Sprint_
@@ -297,13 +296,14 @@ damit ich **meine Stakeholder den Fortschritt mitverfolgen können und ich Über
 
 #### 🏔️​ **Herausforderungen**
 
-- Microsoft Lists bietet nicht alle benötigten Funktionen an. Es wurde am Anfang des 2. Sprints eine Ausweichmöglichkeit definiert
-- Sprint 1 Zeitraum sehr klein
+- Jira Setup war sehr Mühsam. Mein Account war gesperrt und ich musste einen neuen Account sowie eine neue Site erstellen
 
 
 #### 📚​ **Lessons Learned**
 
-- Mehr Austausch mit den Team-Kollegen und Collaboraters pflegen, um Lösungen zu vergleichen und voneinander zu profitieren. Durch einen Tipp von Teamkollegen, bin ich vollständig auf Visual-Studio gewechselt, da es wesentlich mehr Möglichkeiten anbietet, als Obsidian.
+- Durch den Free-Tier von Jira ist man nur auf eine Domäne eingeschränkt
+- Domänen und Sites sind zwei verschiedene Dinge
+- Jira / Confluence Pages mit der Free-Tier werden nach ungefähr 6 Monaten gesperrt
 
 ---
 
