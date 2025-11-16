@@ -127,14 +127,67 @@ Projektzeitleiste und Meilensteine
 | 3      | 15.12.25 - 28.01.25 | Vollendung der Dokumentation                                                             |
 | 3      | 15.12.25 - 28.01.25 | Vorbereitung der Präsentation, Vollendung des Projekts, Abgabe                          |
 
+## 1.3 Risiko-Evaluation
+Identifizierte Projektrisiken und deren Bewertung.
+
+```mermaid
+graph TB
+    subgraph "Risiko Evaluation"
+        subgraph Row1[" "]
+            direction LR
+            subgraph Hoch["🔴 HOHE AUSWIRKUNG"]
+                H1["Cluster-Fehlkonfiguration"]
+                H2["Fehlerhafte Architektur"]
+                H3["Technische Schulden"]
+                H4["API Gateway Kommunikation"]
+                H5["Secrets-Verwaltung"]
+            end
+            subgraph Mittel1["🟡 MITTLERE AUSWIRKUNG Teil 1"]
+                M1["Performance-Overhead durch K8s"]
+                M2["Dokumentation unvollständig"]
+                M3["Learning Curve"]
+                M4["Deployment-Fehler Pipeline"]
+                M5["Monitoring-Lücken"]
+            end
+        end
+        subgraph Row2[" "]
+            direction LR
+            subgraph Mittel2["🟡 MITTLERE AUSWIRKUNG Teil 2"]
+                M6["Service-Integration Probleme"]
+                M7["Ressourcen-Limits falsch gesetzt"]
+                M8["AWS-Kosten Überschreitung"]
+                M9["Datenverlust bei Neustart"]
+                M10["Sprint-Zeitplan Verzug"]
+            end
+            subgraph Niedrig["🟢 NIEDRIGE AUSWIRKUNG"]
+                N1["Präsentations-Zeitverzug"]
+            end
+        end
+        subgraph Wahrscheinlichkeit["📊 Wahrscheinlichkeit"]
+            W1["Hoch: K8s-Komplexität, Zeitdruck"]
+            W2["Mittel: Integration, Ressourcen"]
+            W3["Niedrig: Präsentation"]
+        end
+    end
+    classDef hoch fill:#d97968,stroke:#c06555,stroke-width:2px,color:#fff
+    classDef mittel fill:#d4c171,stroke:#bfad60,stroke-width:2px,color:#2c3e50
+    classDef niedrig fill:#9bc37d,stroke:#7aa65d,stroke-width:2px,color:#fff
+    classDef info fill:#6366f1,stroke:#4f46e5,stroke-width:1px,color:#fff
+    classDef transparent fill:none,stroke:none
+    class H1,H2,H3,H4,H5 hoch
+    class M1,M2,M3,M4,M5,M6,M7,M8,M9,M10 mittel
+    class N1 niedrig
+    class W1,W2,W3 info
+    class Row1,Row2 transparent
+```
+
 ## 1.4 Risiko-Matrix
-Übersicht der Risiken nach Wahrscheinlichkeit und Auswirkung
+Übersicht der Risiken nach Wahrscheinlichkeit und Auswirkung.
 ![alt text](image-1.png)
 
-Dies ist ein test-Text
 
 ## 1.5 SWOT-Analyse 
-Stärken, Schwächen, Chancen und Risiken des Projektes innerhalb der SWOT Analyse:
+Stärken, Schwächen, Chancen und Risiken des Projektes innerhalb der SWOT Analyse.
 
 ![alt text](image.png)
 
