@@ -326,7 +326,9 @@ damit ich **meine Stakeholder den Fortschritt mitverfolgen können und ich Über
 ## 2.1 Architektur Übersicht
 
 Technische übersicht zur Migrierten Architektur:
-``` Mermaid
+Test graph 1
+
+```mermaid
 graph TB
     %% External Users and Services
     User[👥 Benutzer<br/>HTTPS Zugriff]
