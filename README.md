@@ -617,3 +617,8 @@ graph TB
 - 1. DevOps Pipelines wurden in der Grafik entfernt
 - 2. ArgoCD wurde in der Architekturübersicht hinzugefügt
 - 3. ArgoCD wurde mit den Microservices verknüpft
+
+  
+ | Somit hat sich auch ein Element meiner Sprint Übersicht angepasst:
+
+![alt text](image-3.png)
