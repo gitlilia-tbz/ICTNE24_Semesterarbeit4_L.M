@@ -112,6 +112,8 @@ Durch die Migration zu Kubernetes wird die Applikation noch hochverfügbarer und
 3. Eine CI/CD Pipeline wird innerhalb von GitHub Actions erstellt damit ein erfolgreiches Deployment des Images sowie Änderungen in der Code-Base nach Kubernetes erfolgen.
 
 
+
+
 ## 1.2 Zeitplan
 
 Projektzeitleiste und Meilensteine
@@ -310,13 +312,137 @@ damit ich **meine Stakeholder den Fortschritt mitverfolgen können und ich Über
 - Start Entwicklung der Grundarchitektur
 - GUI Planung und erste Umsetzung
 ### 1.6.2 Sprint 2
+
+#### **Zeitraum**
+
+* Disclaimer: Anpassung der Technischen Lösung von DevOps Pipeline zu ArgoCD
+
+17.11.25 - 15.12.25
+
+---
+
+#### **Sprintziele**
+
+	Start Entwicklung Grundarchitektur; Verknüpfung aller Technischen Elemente sowie erste Testphase
+
+---
+
+
+#### **User Stories mit Akzeptanzkriterien**
+---
+
+📍​**User Story 1:**
+
+
+| Title:                   | Priority: | Estimate: |
+| -------------------------- | ----------- | ----------- |
+| Repo-Setup & Jira Setup | High      | 2h        |
+
+
+
+Als Entwickler
+Möchte ich **Meinen Text-Editor oder IDE zu meinem Github-Repo verknüpfen und meine Jira Seite für die User-Stories / Tasks vorbereiten**
+damit ich **Ready bin, um das Projekt zu entwickeln und meinen Vortschritt festzuhalten**.
+
+**Akzeptanzkriterien:**
+
+- Ein verfügbares Repository für die Dokumentation der Semesterarbeit
+- Präferierter IDE / Text-Editor welcher aufs Repo zugreifen kann und aktiv änderungen vornimmt
+- Meine User Stories im Jira festhalten
+
+---
+
+📍​**User Story 2:**
+
+
+| Title:             | Priority: | Estimate: |
+| -------------------- | ----------- | ----------- |
+| Projektkonzipierung | High      | 1d        |
+
+
+
+Als Projektleiterin
+Möchte ich **Projektverlauf planen und die konzipierung verfassen**
+damit ich **einen ersten Anhaltspunkt zum Architekturdesign habe, an welches sich das Projekt richten kann**.
+
+
+**Akzeptanzkriterien:**
+
+- Ein verfügbares KanBan Board mit den einzelnen Sprints und deren Ziele
+- Die Funktionen Daten zu definieren und Cheklisten in den Zielen aufzubauen
+
+---
+
+📍​**User Story 3:**
+
+
+| Title:              | Priority: | Estimate: |
+| --------------------- | ----------- | ----------- |
+| Technisches Design | Medium    | 1d        |
+
+Als Architekt
+Möchte ich **Einen ersten Entwurf meiner Grundarchitektur erstellen**
+damit ich **meine Stakeholder den Fortschritt mitverfolgen können und ich Übersicht über die Aufgaben behalte**.
+**Akzeptanzkriterien:**
+
+- Ein Mermaid Diagramm mit der groben Vorstellung der Architektur
+- Verständliche Beschriftung, Aufbau entsprechend der definierten Sachmittel
+
+---
+
+#### **Aufgabenübersicht Sprint 1**
+
+
+| Aufgabe                  | Status              |
+| -------------------------- | --------------------- |
+| User Story 1 | Alternativ erledigt |
+| User Story 2       | erledigt            |
+| User Story 3    | erledigt            |
+
+---
+
+#### **Sprint Review**
+
+⭐​​**Was wurde erreicht?**
+
+- GitHub repo & Jira Setup erledigt
+- Projektkonzipierung wurde erstellt
+- Erster Entwurf für das Technische Design wurde erstellt
+
+![alt text](image-3.png)
+*_KanBan Ende Sprint_
+
+#### 🏔️​ **Herausforderungen**
+
+- Jira Setup war sehr Mühsam. Mein Account war gesperrt und ich musste einen neuen Account sowie eine neue Site erstellen
+
+
+#### 📚​ **Lessons Learned**
+
+- Durch den Free-Tier von Jira ist man nur auf eine Domäne eingeschränkt
+- Domänen und Sites sind zwei verschiedene Dinge
+- Jira / Confluence Pages mit der Free-Tier werden nach ungefähr 6 Monaten gesperrt
+
+---
+
+#### **Retrospektive**
+
+
+| **📈 More Of**                                                                                                                                                                                             | **📉 Less Of**                                                                                       | **✅ Keep Doing**                                                                                                                                                       | **🛑 Stop Doing**                                                                                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Mehr Austausch mit Team-Kollegen und Collaboraters pflegen**<br>• Lösungen vergleichen und voneinander profitieren <br> | **Thema Microsoft Bookings**<br>• Via Bookings Termin früher Buchen. Slots sind schnell weg | **Offenheit für Tool-Empfehlungen** <br>• Visual Studio bietet wesentlich mehr Möglichkeiten als Obsidian <br><br>** Proaktive Lösungssuche bei Tool-Limitationen** | ***Kein Stop Doing Thema offen***<br>
+
+#### **Ausblick auf Sprint 2**
+
+- Wechsel / Migration des KanBan-Board - **Tool-Migration abschließen** - Vollständiger Wechsel zu Visual Studio
+- Start Entwicklung der Grundarchitektur
+- GUI Planung und erste Umsetzung
 ### 1.6.3 Sprint 3
 
 # 2 Technische Dokumentation
 ## 2.1 Architektur Übersicht
 
 Technische übersicht zur Migrierten Architektur:
-Test graph 1
 
 ```mermaid
 graph TB
@@ -388,3 +514,106 @@ graph TB
     class HPA support
     class DB db
 ```
+
+## 2.1 Architektur Übersicht - Angepasst
+
+Nach Besprechnungen mit den Dozenten Philip Stark sowie Thanam Pangri bin ich auf die Idee einer Anpassung der Technischen Lösung gekommen.
+Diese ist auf Positive Rückmeldung seitens der beiden Dozenten gestossen.
+
+Anstatt der klassichen DevOps Pipelines via GitHub Actions, setze ich auf eine Umsetzung mit ArgoCD.
+
+- Wieso ArgoCD?
+
+ArgoCD bietet für den Zweck der Microservices eine deutlich übersichtliche Oberfläche für das Managen sowie des Überwachen der Cluster. Mittels der Self-Healing Funktionalitäten bieter ArgoCD somit eine stabile Lösung für den Gebrauch in einer Live-Umgebung.
+ArgoCD gleicht sich ständig mit dem Repo ab als "Single Point of Truth". Alle commits sind nachvollziehbar.
+
+ArgoCD bietet eine übersichtliche Web GUI, die den Zustand der Microservices, den Ressourcen und deren Beziehungen darstellt. So siehst man schnell, was deployed ist und wo es Probleme gibt.
+
+Dies ist nach meiner Reflexion über meiner Technischen Planung eine passendere und nachhaltigere Lösung für meine Microservices.
+
+Technische Übersicht zur ArgoCD Lösung:
+
+```mermaid
+graph TB
+    %% External Users and Services
+    User[👥 Benutzer<br/>HTTPS Zugriff]
+    GitRepo[📁 Git Repository<br/>Manifests & Config]
+    WeatherAPI[☁️ OpenWeatherMap<br/>Weather API]
+    
+    %% AWS Cloud
+    subgraph AWS["☁️ AWS Cloud (eu-central-1)"]
+        subgraph EC2["🖥️ EC2 Instance (t3.medium)"]
+            subgraph K8s["⎈ Kubernetes Cluster (k3s)"]
+                
+                %% ArgoCD
+                ArgoCD[🔄 ArgoCD<br/>GitOps Controller]
+                
+                %% Ingress
+                Ingress[⚡ Nginx Ingress Controller<br/>Port 80/443]
+                
+                %% Kubernetes Services
+                subgraph Namespace["📦 Namespace: trackmygym"]
+                    Frontend[🎨 Frontend Pod<br/>React/Vue.js UI]
+                    UserSvc[👤 User Service Pod<br/>Auth & Profile]
+                    StatsSvc[📊 Stats Service Pod<br/>Analytics]
+                    WorkoutSvc[💪 Workout Service Pod<br/>Training Plans]
+                    WeatherSvc[🌤️ Weather Service Pod<br/>Weather Integration]
+                    DB[(🗄️ PostgreSQL Pod<br/>users + workouts)]
+                end
+                
+                %% Supporting Components
+                HPA[📈 HPA<br/>Auto-Scaling]
+            end
+        end
+    end
+    
+    %% Main User Flow
+    User -->|HTTPS| Ingress
+    Ingress -->|Routes| Frontend
+    
+    %% Frontend to Backend Services
+    Frontend -->|API| UserSvc
+    Frontend -->|API| StatsSvc
+    Frontend -->|API| WorkoutSvc
+    Frontend -->|API| WeatherSvc
+    
+    %% Services to Database
+    UserSvc --> DB
+    StatsSvc --> DB
+    WorkoutSvc --> DB
+    
+    %% External API
+    WeatherSvc -->|HTTP| WeatherAPI
+    
+    %% GitOps Flow
+    GitRepo -->|Monitored by| ArgoCD
+    ArgoCD -->|Sync & Deploy| Namespace
+    ArgoCD -.->|Auto-Sync| Ingress
+    
+    %% Auto-Scaling
+    HPA -.->|Scales| Namespace
+    
+    %% Styling
+    classDef external fill:#e3f2fd,stroke:#1976d2,stroke-width:3px,color:#0d47a1
+    classDef aws fill:#fff3e0,stroke:#f57c00,stroke-width:3px,color:#e65100
+    classDef k8s fill:#e8f5e9,stroke:#43a047,stroke-width:3px,color:#2e7d32
+    classDef service fill:#bbdefb,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    classDef support fill:#fff9c4,stroke:#fbc02d,stroke-width:2px,color:#f57f17
+    classDef db fill:#b3e5fc,stroke:#0288d1,stroke-width:3px,color:#01579b
+    classDef argocd fill:#fce4ec,stroke:#c2185b,stroke-width:3px,color:#880e4f
+    
+    class User,WeatherAPI external
+    class GitRepo argocd
+    class AWS,EC2 aws
+    class K8s,Namespace k8s
+    class Frontend,UserSvc,StatsSvc,WorkoutSvc,WeatherSvc,Ingress service
+    class HPA support
+    class DB db
+    class ArgoCD argocd
+    
+```
+
+- Was sind die Hauptunterschiede?
+- 1. DevOps Pipelines wurden in der Grafik entfernt
+- 2. ArgoCD wurde in der Architekturübersicht hinzugefügt
+- 3. ArgoCD wurde mit den Microservices verknüpft
