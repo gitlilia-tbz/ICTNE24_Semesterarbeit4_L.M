@@ -115,17 +115,7 @@ Durch die Migration zu Kubernetes wird die Applikation noch hochverfügbarer und
 ## 1.2 Zeitplan
 
 Projektzeitleiste und Meilensteine
-
-
-| Sprint | Zeitpunkt     | Arbeitsschritte                                                                          |
-| -------- | --------------- | ------------------------------------------------------------------------------------------ |
-| 1      | 27.10.25 - 17.11.25 | Repo Setup & Jira Setup, Projektkonzipierung, Technisches Design                                              |
-| 2      | 17.11.25 - 15.12.25 | Start Entwicklung der Grundarchitektur (Kubernetes, Amazon EC2)                                                 |                                                    |
-| 2      | 17.11.25 - 15.12.25 | Verknüpfung der Elemente, DevOps Pipelines, Erste Testphase                       |
-| 3      | 15.12.25 - 28.01.25| Verbesserungen und Abschluss der Funktionalitäten |
-| 3      | 15.12.25 - 28.01.25 | Vollendung der Dokumentation                                                             |
-| 3      | 15.12.25 - 28.01.25 | Vorbereitung der Präsentation, Vollendung des Projekts, Abgabe                          |
-
+ 
 ![alt text](image-2.png)
 
 ## 1.3 Risiko-Evaluation
