@@ -339,19 +339,18 @@ damit ich **meine Stakeholder den Fortschritt mitverfolgen können und ich Über
 
 | Title:                   | Priority: | Estimate: |
 | -------------------------- | ----------- | ----------- |
-| Repo-Setup & Jira Setup | High      | 2h        |
+| Entwicklung Grundarchitektur (AWS & Kubernetes) | High      | 2d        |
 
 
 
 Als Entwickler
-Möchte ich **Meinen Text-Editor oder IDE zu meinem Github-Repo verknüpfen und meine Jira Seite für die User-Stories / Tasks vorbereiten**
-damit ich **Ready bin, um das Projekt zu entwickeln und meinen Vortschritt festzuhalten**.
+Möchte ich **Meine AWS EC2 Instanz aufsetzen sowie die Kubernetes Services für meine Microservices bereitstellen**
+damit ich **Ready bin, um die Services zu Verknüpfen und ArgoCD zu initiieren**.
 
 **Akzeptanzkriterien:**
 
-- Ein verfügbares Repository für die Dokumentation der Semesterarbeit
-- Präferierter IDE / Text-Editor welcher aufs Repo zugreifen kann und aktiv änderungen vornimmt
-- Meine User Stories im Jira festhalten
+- Eine verfügbare EC2 Instanz
+- Installiertes Kubernetes auf der Instanz
 
 ---
 
@@ -360,19 +359,20 @@ damit ich **Ready bin, um das Projekt zu entwickeln und meinen Vortschritt festz
 
 | Title:             | Priority: | Estimate: |
 | -------------------- | ----------- | ----------- |
-| Projektkonzipierung | High      | 1d        |
+| Verknüpfung der Technischen Elemente | High      | 2d        |
 
 
 
-Als Projektleiterin
-Möchte ich **Projektverlauf planen und die konzipierung verfassen**
-damit ich **einen ersten Anhaltspunkt zum Architekturdesign habe, an welches sich das Projekt richten kann**.
+Als Entwickler
+Möchte ich **Die Technischen Elemente (EC2, Kubernetes & ArgoCD, Deployment Manifests und deren Microservices)** bereitstellen
+damit ich **auf neine erste funktionstüchtige ArgoCD Instanz zugreifen kann**.
 
 
 **Akzeptanzkriterien:**
 
-- Ein verfügbares KanBan Board mit den einzelnen Sprints und deren Ziele
-- Die Funktionen Daten zu definieren und Cheklisten in den Zielen aufzubauen
+- Eine verfügbare ArgoCD GUI
+- Ein gesundes cluster
+- Erster Zugriff auf die Microservices
 
 ---
 
@@ -381,26 +381,28 @@ damit ich **einen ersten Anhaltspunkt zum Architekturdesign habe, an welches sic
 
 | Title:              | Priority: | Estimate: |
 | --------------------- | ----------- | ----------- |
-| Technisches Design | Medium    | 1d        |
+| Testing | Medium    | 1d        |
 
-Als Architekt
-Möchte ich **Einen ersten Entwurf meiner Grundarchitektur erstellen**
-damit ich **meine Stakeholder den Fortschritt mitverfolgen können und ich Übersicht über die Aufgaben behalte**.
+Als Tester
+Möchte ich **Die Verfügbarkeit und Funktionalitäten meiner Microservices testen**
+damit ich **eine stabile Umgebung gewährleisten kann**
+
 **Akzeptanzkriterien:**
 
-- Ein Mermaid Diagramm mit der groben Vorstellung der Architektur
-- Verständliche Beschriftung, Aufbau entsprechend der definierten Sachmittel
+- WebGUI von TrackMyGym ersichtlich
+- Erstellung der Workout-Einträge möglich
+- Wettervorhersagen entsprechend des Workouts verfügbar
 
 ---
 
-#### **Aufgabenübersicht Sprint 1**
+#### **Aufgabenübersicht Sprint 2**
 
 
 | Aufgabe                  | Status              |
 | -------------------------- | --------------------- |
 | User Story 1 | Alternativ erledigt |
-| User Story 2       | erledigt            |
-| User Story 3    | erledigt            |
+| User Story 2       | In Progress         |
+| User Story 3    | In Progress       |
 
 ---
 
@@ -408,23 +410,21 @@ damit ich **meine Stakeholder den Fortschritt mitverfolgen können und ich Über
 
 ⭐​​**Was wurde erreicht?**
 
-- GitHub repo & Jira Setup erledigt
-- Projektkonzipierung wurde erstellt
-- Erster Entwurf für das Technische Design wurde erstellt
+- EC2 Instanz erstellt
+- ...
+- ...
 
 ![alt text](image-3.png)
 *_KanBan Ende Sprint_
 
 #### 🏔️​ **Herausforderungen**
 
-- Jira Setup war sehr Mühsam. Mein Account war gesperrt und ich musste einen neuen Account sowie eine neue Site erstellen
+- ...
 
 
 #### 📚​ **Lessons Learned**
 
-- Durch den Free-Tier von Jira ist man nur auf eine Domäne eingeschränkt
-- Domänen und Sites sind zwei verschiedene Dinge
-- Jira / Confluence Pages mit der Free-Tier werden nach ungefähr 6 Monaten gesperrt
+- ...
 
 ---
 
@@ -435,11 +435,11 @@ damit ich **meine Stakeholder den Fortschritt mitverfolgen können und ich Über
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Mehr Austausch mit Team-Kollegen und Collaboraters pflegen**<br>• Lösungen vergleichen und voneinander profitieren <br> | **Thema Microsoft Bookings**<br>• Via Bookings Termin früher Buchen. Slots sind schnell weg | **Offenheit für Tool-Empfehlungen** <br>• Visual Studio bietet wesentlich mehr Möglichkeiten als Obsidian <br><br>** Proaktive Lösungssuche bei Tool-Limitationen** | ***Kein Stop Doing Thema offen***<br>
 
-#### **Ausblick auf Sprint 2**
+#### **Ausblick auf Sprint 3**
 
-- Wechsel / Migration des KanBan-Board - **Tool-Migration abschließen** - Vollständiger Wechsel zu Visual Studio
-- Start Entwicklung der Grundarchitektur
-- GUI Planung und erste Umsetzung
+- ....
+- ...
+- ...
 ### 1.6.3 Sprint 3
 
 # 2 Technische Dokumentation
