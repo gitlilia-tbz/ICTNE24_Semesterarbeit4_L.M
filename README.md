@@ -20,6 +20,9 @@
 
 [🚀 Live Demo](http://52.202.224.208/) • [📖 Repo](https://github.com/gitlilia-tbz/ICTNE24_Semesterarbeit3_L.M) • [🏗️ KanBan](https://semesterarbeit3liliam.atlassian.net/jira/software/projects/KAN/boards/1)
 
+Live Update:
+|EC2 Instanz Aktiv -> ArgoCD Setup: In Progress|
+
 ## Inhaltsverzeichnis
 
 ## 📋 Projektübersicht
