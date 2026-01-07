@@ -220,7 +220,7 @@ damit ich **Ready bin, um das Projekt zu entwickeln und meinen Vortschritt festz
 **Akzeptanzkriterien:**
 
 - Ein verfügbares Repository für die Dokumentation der Semesterarbeit
-- Präferierter IDE / Text-Editor welcher aufs Repo zugreifen kann und aktiv änderungen vornimmt
+- Präferierter IDE / Text-Editor welcher aufs Repo zugreifen kann und aktiv Änderungen vornimmt
 - Meine User Stories im Jira festhalten
 
 ---
@@ -333,7 +333,7 @@ damit ich **meine Stakeholder den Fortschritt mitverfolgen können und ich Über
 #### **User Stories mit Akzeptanzkriterien**
 ---
 
-📍​**User Story 1:**
+📍​**User Story 4:**
 
 
 | Title:                   | Priority: | Estimate: |
@@ -353,7 +353,7 @@ damit ich **Ready bin, um die Services zu Verknüpfen und ArgoCD zu initiieren**
 
 ---
 
-📍​**User Story 2:**
+📍​**User Story 5:**
 
 
 | Title:             | Priority: | Estimate: |
@@ -374,8 +374,35 @@ damit ich **auf neine erste funktionstüchtige ArgoCD Instanz zugreifen kann**.
 - Erster Zugriff auf die Microservices
 
 ---
+📍​**User Story 6:**
 
-📍​**User Story 3:**
+
+| Title:              | Priority: | Estimate: |
+| --------------------- | ----------- | ----------- |
+| ArgoCD Setup | Medium    | 1d        |
+
+Als Entwickler
+Möchte ich **Die Verfügbarkeit von ArgoCD gewährleisten**
+damit ich **eine Übersicht auf meine aktiven Cluster sowie der Microservices erhalte**
+
+**Akzeptanzkriterien:**
+
+- WebGUI von Argo CD ersichtlich
+---
+
+#### **Aufgabenübersicht Sprint 2**
+
+
+| Aufgabe                  | Status              |
+| -------------------------- | --------------------- |
+| User Story 1 | Alternativ erledigt |
+| User Story 2       | In Progress         |
+| User Story 3    | In Progress       |
+
+---
+
+
+📍​**User Story 7:**
 
 
 | Title:              | Priority: | Estimate: |
