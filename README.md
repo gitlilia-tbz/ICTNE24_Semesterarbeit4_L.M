@@ -1,7 +1,7 @@
 # README
 
 # 🏋️‍♀️ FitTracker Pro - Kubernetes Version. Tracke. Wachse. Gewinne.
-![alt text](Bild hier einfügen)
+![alt text](image-4.png)
 
 ### Fitness Tracking Platform - Migriert auf Kubernetes
 
@@ -20,8 +20,8 @@
 
 [🚀 Live Demo](http://52.202.224.208/) • [📖 Repo](https://github.com/gitlilia-tbz/ICTNE24_Semesterarbeit3_L.M) • [🏗️ KanBan](https://semesterarbeit3liliam.atlassian.net/jira/software/projects/KAN/boards/1)
 
-Live Update:
-|EC2 Instanz Aktiv -> ArgoCD Setup: In Progress|
+# Live Update:
+|ArgoCD Setup: In Progress /// Aktualisierung Jira-Board: In Progress|
 
 ## Inhaltsverzeichnis
 
@@ -45,12 +45,12 @@ Live Update:
 
 * [2.1 Architektur-Übersicht](#21-architektur-übersicht)
 
-### [3. ☁️ Deployment & DevOps](#3-️-deployment--devops)
+### [3. ☁️ Deployment](#3-️-deployment--devops)
 
 * [3.1 AWS EC2 Setup](#31-aws-ec2-setup)
 * [3.2 Kubernetes Setup](#32-kubernetes-setup)
-* [3.3 CI/CD Pipeline](#33-cicd-pipeline)
-* [3.4 GitHub Actions](#34-github-actions)
+* [3.3 ArgoCD](#33-ArgoCD)
+* [3.4 YAML Files](#34-yaml-files)
 * [3.5 Produktionsumgebung](#35-produktionsumgebung)
 
 ### [4. 📱 User Interface](#4--user-interface)
@@ -60,9 +60,8 @@ Live Update:
 
 ### [5. 🧪 Testing & Qualitätssicherung](#5--testing--qualitätssicherung)
 
-* [5.1 Pipeline-Testing](#51-pipeline-testing)
-* [5.2 User-Testing](#52-user-testing)
-* [5.3 10 Testfälle](#53-10-testfälle)
+* [5.1 User-Testing](#52-user-testing)
+* [5.2  10 Testfälle](#53-10-testfälle)
 
 ### [6. 📈 Ergebnisse & Reflexion](#6--ergebnisse--reflexion)
 
