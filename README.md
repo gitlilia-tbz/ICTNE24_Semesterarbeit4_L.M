@@ -426,9 +426,10 @@ damit ich **eine stabile Umgebung gewährleisten kann**
 
 | Aufgabe                  | Status              |
 | -------------------------- | --------------------- |
-| User Story 1 | Alternativ erledigt |
-| User Story 2       | In Progress         |
-| User Story 3    | In Progress       |
+| User Story 4 | Erledigt |
+| User Story 5       | In Progress         |
+| User Story 6    | In Progress       |
+| User Story 7    | In Progress       |
 
 ---
 
@@ -467,6 +468,143 @@ damit ich **eine stabile Umgebung gewährleisten kann**
 - ...
 - ...
 ### 1.6.3 Sprint 3
+#### **Zeitraum**
+
+* Disclaimer: Anpassung der Technischen Lösung von DevOps Pipeline zu ArgoCD
+
+15.12.25 - 28.01.25
+
+---
+
+#### **Sprintziele**
+
+	Verbesserungen und Abschluss der Funktionalitäten, Vollendung der Dokumentation, Vorbereitung der Präsentation, Vollendung des Projekts & Abgabe
+
+---
+
+
+#### **User Stories mit Akzeptanzkriterien**
+---
+
+📍​**User Story 8:**
+
+
+| Title:                   | Priority: | Estimate: |
+| -------------------------- | ----------- | ----------- |
+| Verbesserungen und Abschluss der Funktionalitäten | Medium      | 2d        |
+
+
+
+Als Entwickler
+Möchte ich **Allfällige Verbesserungen & Schönheitsmerkmale** umsetzen
+damit ich **dem Projekt einen Feinschliff verleien kann (GUI, Zugriffe)**.
+
+**Akzeptanzkriterien:**
+
+- Eine GUI welches dem letzen Projekt gleich kommt
+- Einfache Zugriffe auf die Instanz (Domänenname)
+---
+
+📍​**User Story 9:**
+
+
+| Title:             | Priority: | Estimate: |
+| -------------------- | ----------- | ----------- |
+| Vollendung der Dokumentation | High      | 3d        |
+
+
+
+Als Projektleiterin
+Möchte ich **Meine Dokumentation auf dem Repo vollenden**
+damit ich **Alle Themenbereiche des Projektes abgedeckt habe**.
+
+
+**Akzeptanzkriterien:**
+
+- Vollständige Dokumentation mit allen Überthemen auf dem aktuellen Repo
+
+---
+📍​**User Story 10:**
+
+
+| Title:              | Priority: | Estimate: |
+| --------------------- | ----------- | ----------- |
+| Vorbereitung der Präsentation | Medium    | 1d        |
+
+Als Sales Representative
+Möchte ich **Eine Präsentation in Form eines Pitch** vorbereiten
+damit ich **das Projekt den Stakeholdern vorstellen kann**
+
+**Akzeptanzkriterien:**
+
+- PowerPoint Präsentation mit live-Demo
+---
+📍​**User Story 10:**
+
+
+| Title:              | Priority: | Estimate: |
+| --------------------- | ----------- | ----------- |
+| Vollendung des Projekts, Abgabe | Highest    | 1d        |
+
+Als Projektleiter
+Möchte ich **mein Projekt** abgeben
+damit ich den Dozenten die Bewertung meines Projektes ermögliche.
+
+**Akzeptanzkriterien:**
+
+- Abgabe vollständiges Repo mit allen Dateien
+- Abgabe PP Präsentation
+- Abgabe allfällige Kommentare in Form eines Teams Posts
+---
+
+#### **Aufgabenübersicht Sprint 2**
+
+
+| Aufgabe                  | Status              |
+| -------------------------- | --------------------- |
+| User Story 8 | offen |
+| User Story 9       | In Progress         |
+| User Story 10    | offen       |
+| User Story 11    | offen       |
+
+
+
+---
+
+#### **Sprint Review**
+
+⭐​​**Was wurde erreicht?**
+
+- EC2 Instanz erstellt
+- ...
+- ...
+
+
+*_KanBan Ende Sprint_
+
+#### 🏔️​ **Herausforderungen**
+
+- ...
+
+
+#### 📚​ **Lessons Learned**
+
+- ...
+
+---
+
+#### **Retrospektive**
+
+
+| **📈 More Of**                                                                                                                                                                                             | **📉 Less Of**                                                                                       | **✅ Keep Doing**                                                                                                                                                       | **🛑 Stop Doing**                                                                                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Mehr Austausch mit Team-Kollegen und Collaboraters pflegen**<br>• Lösungen vergleichen und voneinander profitieren <br> | **Thema Microsoft Bookings**<br>• Via Bookings Termin früher Buchen. Slots sind schnell weg | **Offenheit für Tool-Empfehlungen** <br>• Visual Studio bietet wesentlich mehr Möglichkeiten als Obsidian <br><br>** Proaktive Lösungssuche bei Tool-Limitationen** | ***Kein Stop Doing Thema offen***<br>
+
+#### **Ausblick auf Sprint 3**
+
+- ....
+- ...
+- ...
 
 # 2 Technische Dokumentation
 ## 2.1 Architektur Übersicht
@@ -886,3 +1024,29 @@ docker push gitlilia/trackmygym-stats-service:v1.0.0
 docker push gitlilia/trackmygym-weather-service:v1.0.0
 docker push gitlilia/trackmygym-nginx:v1.0.0
 ````
+
+#### Nachweis Push-Prozess
+![alt text](image-15.png)
+#### Nachweis Push-Prozess Erfolgreich
+![alt text](image-16.png)
+#### Docker-Hub Übersicht
+- ✅ trackmygym-frontend
+- ✅ trackmygym-user-service
+- ✅ trackmygym-workout-service
+- ✅ trackmygym-stats-service
+- ✅ trackmygym-weather-service
+- ✅ trackmygym-nginx
+  
+![alt text](image-17.png)
+
+
+### Kubernetes Manifests
+# Kubernetes Manifests Übersicht
+
+| Kategorie | Komponente | Dateien |
+|-----------|------------|---------|
+| **1. PostgreSQL (Database)** | Database | • Deployment / StatefulSet<br>• Service<br>• PersistentVolumeClaim (Speicher)<br>• ConfigMap (init.sql)<br>• Secret (DB Passwort) |
+| **2. Microservices** | Frontend<br>User Service<br>Workout Service<br>Stats Service<br>Weather Service | • deployment.yaml<br>• service.yaml<br><br>*(pro Service)* |
+| **3. Nginx Ingress** | Ingress Controller | • ingress.yaml (mit sslip.io)<br>• nginx-ingress-controller.yaml |
+| **4. ArgoCD Applications** | GitOps | • frontend-app.yaml<br>• user-service-app.yaml<br>• workout-service-app.yaml<br>• stats-service-app.yaml<br>• weather-service-app.yaml<br>• database-app.yaml |
+| **5. Monitoring** | Auto-Scaling | • HPA (Horizontal Pod Autoscaler) |
