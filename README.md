@@ -712,7 +712,7 @@ Source: My IP (für kubectl Zugriff)
 ```
 ![alt text](image-9.png)
 
-
+## 3.2 Kubernetes Setup
 ### K3S Installation
 ```
 # Auf EC2 Instanz ausführen:
@@ -726,3 +726,130 @@ sudo chown $USER ~/.kube/config
 kubectl get nodes
 ```
 ![alt text](image-11.png)
+
+## Bestehende Sudo Berechtigungen 
+
+### Problem
+Nach der k3s Installation konnte kubectl nicht ohne `sudo` verwendet werden, da die Standard-Konfigurationsdatei `/etc/rancher/k3s/k3s.yaml` nur für root lesbar ist.
+
+### Lösung
+
+#### Schritt 1: .kube Verzeichnis erstellen
+```bash
+mkdir -p ~/.kube
+```
+
+#### Schritt 2: k3s Konfiguration kopieren
+```bash
+sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+```
+
+#### Schritt 3: Berechtigungen setzen
+```bash
+sudo chown ubuntu:ubuntu ~/.kube/config
+chmod 600 ~/.kube/config
+```
+
+#### Schritt 4: KUBECONFIG Umgebungsvariable setzen
+```bash
+# Für die aktuelle Session
+export KUBECONFIG=~/.kube/config
+
+# Dauerhaft in .bashrc einfügen
+echo 'export KUBECONFIG=~/.kube/config' >> ~/.bashrc
+
+# .bashrc neu laden
+source ~/.bashrc
+```
+
+#### Schritt 5: Funktionalität testen
+```bash
+kubectl get nodes
+```
+
+**Erwartete Ausgabe:**
+```
+NAME               STATUS   ROLES           AGE     VERSION
+ip-172-31-27-185   Ready    control-plane   5d10h   v1.34.3+k3s1
+```
+
+#### Zusammenfassung
+
+Nach diesen Schritten kann kubectl ohne `sudo` verwendet werden. Die KUBECONFIG Umgebungsvariable zeigt auf die Benutzerkopie der Konfiguration (`~/.kube/config`), die die korrekten Berechtigungen hat.
+
+### Nützliche Befehle
+
+```bash
+# Cluster-Info anzeigen
+kubectl cluster-info
+
+# Alle Namespaces anzeigen
+kubectl get namespaces
+
+# Pods in einem Namespace anzeigen
+kubectl get pods -n trackmygym
+
+# Aktuelle Konfiguration anzeigen
+kubectl config view
+```
+
+
+### Namespace erstellen
+
+```bash
+# TrackMyGym Namespace erstellen
+kubectl create namespace trackmygym
+
+# Überprüfen
+kubectl get namespaces
+```
+![alt text](image-12.png)
+
+## Repository Struktur
+````
+trackmygym-k8s/
+├── apps/                           # Alle Microservices
+│   ├── frontend/
+│   │   ├── deployment.yaml         # Pod Definition + Container Image
+│   │   ├── service.yaml            # Internes Networking
+│   │   └── kustomization.yaml      # Optional: Config Management
+│   ├── user-service/               # Gleiche Struktur für jeden Service
+│   ├── workout-service/
+│   ├── stats-service/
+│   └── weather-service/
+│
+├── database/                       # PostgreSQL
+│   ├── postgres-deployment.yaml    # Database Pod
+│   ├── postgres-service.yaml       # Database Service
+│   ├── postgres-pvc.yaml           # Persistent Storage
+│   └── kustomization.yaml
+│
+├── ingress/                        # Externes Routing
+│   ├── ingress.yaml                # Traffic Regeln (welcher Host → welcher Service)
+│   └── nginx-ingress-controller.yaml
+│
+├── argocd/                         # GitOps Konfiguration
+│   ├── applications/               # ArgoCD Apps (eine pro Service)
+│   │   ├── frontend-app.yaml
+│   │   ├── user-service-app.yaml
+│   │   └── ...
+│   └── argocd-install.yaml
+│
+├── monitoring/                     # Auto-Scaling
+│   └── hpa.yaml                    # Horizontal Pod Autoscaler Regeln
+│
+├── secrets/                        # Sensitive Daten (NICHT in Git!)
+│   └── README.md
+│
+├── .gitignore                      # Verhindert Secrets-Commit
+└── README.md                       # Projektdokumentation
+````
+
+
+| Datei | Zweck |
+|-------|-------|
+|` deployment.yaml` | Definiert WAS läuft (Image, Replicas, Resources) |
+|`service.yaml` | Macht Pods intern erreichbar (Networking) |
+|`ingress.yaml` | Macht Services von außen erreichbar (HTTP Routing) |
+|`argocd/*-app.yaml` | Sagt ArgoCD: "Deploy diesen Ordner automatisch" |
+|`hpa.yaml` | Auto-Scaling bei Last |
