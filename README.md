@@ -807,7 +807,7 @@ kubectl get namespaces
 
 ### Repository Struktur
 ````
-trackmygym-k8s/
+k8s/
 ├── apps/                           # Alle Microservices
 │   ├── frontend/
 │   │   ├── deployment.yaml         # Pod Definition + Container Image
@@ -822,7 +822,8 @@ trackmygym-k8s/
 │   ├── postgres-deployment.yaml    # Database Pod
 │   ├── postgres-service.yaml       # Database Service
 │   ├── postgres-pvc.yaml           # Persistent Storage
-│   └── kustomization.yaml
+│   ├──postgres-configmap.yaml      # init.sql
+|   └──postgres-secret.yaml         # DB Credentials
 │
 ├── ingress/                        # Externes Routing
 │   ├── ingress.yaml                # Traffic Regeln (welcher Host → welcher Service)
@@ -853,3 +854,35 @@ trackmygym-k8s/
 |`ingress.yaml` | Macht Services von außen erreichbar (HTTP Routing) |
 |`argocd/*-app.yaml` | Sagt ArgoCD: "Deploy diesen Ordner automatisch" |
 |`hpa.yaml` | Auto-Scaling bei Last |
+
+### Docker Registry
+
+- Registry-Anbieter: `hub.docker.com`
+- Username: `gitlilia`
+
+### Docker-Build Befehle
+````
+# Alle Images bauen
+cd ICTNE24_Semesterarbeit3_L.M # Aus dem letzten Repo
+
+docker build -t gitlilia/trackmygym-frontend:v1.0.0 ./frontend
+docker build -t gitlilia/trackmygym-user-service:v1.0.0 ./user-service
+docker build -t gitlilia/trackmygym-workout-service:v1.0.0 ./workout-service
+docker build -t gitlilia/trackmygym-stats-service:v1.0.0 ./stats-service
+docker build -t gitlilia/trackmygym-weather-service:v1.0.0 ./weather-service
+docker build -t gitlilia/trackmygym-nginx:v1.0.0 ./nginx
+````
+#### Nachweis Build-Prozess
+![alt text](image-13.png)
+#### Nachweis Build-Prozess Erfolgreich
+![alt text](image-14.png)
+
+````
+# Alle Images pushen
+docker push gitlilia/trackmygym-frontend:v1.0.0
+docker push gitlilia/trackmygym-user-service:v1.0.0
+docker push gitlilia/trackmygym-workout-service:v1.0.0
+docker push gitlilia/trackmygym-stats-service:v1.0.0
+docker push gitlilia/trackmygym-weather-service:v1.0.0
+docker push gitlilia/trackmygym-nginx:v1.0.0
+````
