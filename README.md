@@ -611,6 +611,20 @@ damit ich den Dozenten die Bewertung meines Projektes ermögliche.
 
 Technische übersicht zur Migrierten Architektur:
 
+
+| Komponente | Beschreibung |
+|------------|--------------|
+| **Benutzer mit HTTPS Zugriff** | Externe Clients greifen über HTTPS auf das System zu |
+| **EC2 Bucket** | Cloud-Speicher für statische Ressourcen |
+| **Nginx Ingress Controller** | Routing und Load Balancing für eingehende Anfragen |
+| **GitHub CI/CD Pipeline / Namespace** | Automatisierte Deployment-Pipeline |
+| **Frontend Pod** | Weboberfläche für Benutzerinteraktion |
+| **User Service Pod** | Benutzerverwaltung und Authentifizierung |
+| **Stats Service Pod** | Statistik- und Analyseservice |
+| **Workout Service Pod** | Verwaltung von Workout-Daten |
+| **Weather Service Pod** | Wetterdaten-Integration und -Verarbeitung |
+| **PostgreSQL Pod** | Relationale Datenbank für persistente Daten |
+| **OpenWeatherMap API** | Externe API für aktuelle Wetterdaten |
 ```mermaid
 graph TB
     %% External Users and Services
@@ -699,6 +713,26 @@ ArgoCD bietet eine übersichtliche Web GUI, die den Zustand der Microservices, d
 Dies ist nach meiner Reflexion über meiner Technischen Planung eine passendere und nachhaltigere Lösung für meine Microservices.
 
 Technische Übersicht zur ArgoCD Lösung:
+# System-Komponenten Übersicht
+
+| Komponente | Beschreibung |
+|------------|--------------|
+| **Benutzer HTTPS Zugriff** | Externe Clients greifen über HTTPS auf das System zu |
+| **Git Repository Manifests & Config** | Versionskontrolle für Konfiguration und Manifests |
+| **AWS Cloud (eu-central-1)** | Cloud-Umgebung in der Region EU-Central-1 |
+| **EC2 Instance** | Virtuelle Serverinstanz für Kubernetes |
+| **Kubernetes Cluster (k3s)** | Leichtgewichtige Kubernetes-Distribution |
+| **ArgoCD GitOps Controller** | Automatisches Deployment basierend auf Git |
+| **Nginx Ingress Controller Port 80/443** | Routing und Load Balancing für HTTP/HTTPS |
+| **HPA Auto-Scaling** | Automatische horizontale Pod-Skalierung |
+| **Namespace** | Isolierte Umgebung für Services |
+| **Frontend Pod React/Vue.js UI** | Weboberfläche für Benutzerinteraktion |
+| **User Service Pod Auth & Profile** | Benutzerverwaltung und Authentifizierung |
+| **Stats Service Pod Analytics** | Statistik- und Analyseservice |
+| **Workout Service Pod Training Plans** | Verwaltung von Trainingsplänen |
+| **Weather Service Pod Weather Integration** | Wetterdaten-Integration und -Verarbeitung |
+| **PostgreSQL Pod users + workouts** | Datenbank für Benutzer- und Workout-Daten |
+| **OpenWeatherMap Weather API** | Externe API für aktuelle Wetterdaten |
 
 ```mermaid
 graph TB
