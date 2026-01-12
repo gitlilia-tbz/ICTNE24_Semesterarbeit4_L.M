@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-service
+  namespace: trackmygym
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: weather-service
+  template:
+    metadata:
+      labels:
+        app: weather-service
+    spec:
+      containers:
+      - name: weather-service
+        image: gitlilia/trackmygym-weather-service:v1.0.0
+        ports:
+        - containerPort: 5004
+        env:
+        - name: FLASK_ENV
+          value: "production"
+        - name: FLASK_DEBUG
+          value: "False"
+        - name: OPENWEATHER_API_KEY
+          value: "demo_key"  # TODO: Ersetze mit echtem API Key
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 5004
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 5004
+          initialDelaySeconds: 5
+          periodSeconds: 5
