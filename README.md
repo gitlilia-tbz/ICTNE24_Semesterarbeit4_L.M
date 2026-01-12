@@ -727,7 +727,7 @@ kubectl get nodes
 ```
 ![alt text](image-11.png)
 
-## Bestehende Sudo Berechtigungen 
+### Bestehende Sudo Berechtigungen 
 
 ### Problem
 Nach der k3s Installation konnte kubectl nicht ohne `sudo` verwendet werden, da die Standard-Konfigurationsdatei `/etc/rancher/k3s/k3s.yaml` nur für root lesbar ist.
@@ -805,7 +805,7 @@ kubectl get namespaces
 ```
 ![alt text](image-12.png)
 
-## Repository Struktur
+### Repository Struktur
 ````
 trackmygym-k8s/
 ├── apps/                           # Alle Microservices
