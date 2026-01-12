@@ -651,3 +651,78 @@ graph TB
  | Somit hat sich auch ein Element meiner Sprint Übersicht angepasst:
 
 ![alt text](image-3.png)
+
+
+# 3. Deployment
+## 3.1 AWS EC2 Setup
+
+### Kostenmanagement
+#### Billing-Alerts und threshholds für aktive Sessions
+![alt text](image-5.png)
+
+
+### EC2 Eigenschaften
+#### Eigenschaften der Instanz
+
+```
+# - Instance Type: t3.medium oder größer (2 vCPU, 4 GB RAM minimum)
+# - OS: Ubuntu 22.04 LTS
+# - Storage: 30 GB SSD minimum
+# - Security Group: Ports 22, 80, 443, 6443 (Kubernetes API)
+```
+![alt text](image-6.png)
+
+#### Eigenschaften des Betriebssystem
+![alt text](image-10.png)
+#### User Data Eintrag
+Damit das System auf dem neusten Stand bleibt
+![alt text](image-8.png)
+
+
+#### Eigenschaften der Security Group Regeln
+```
+Inbound Security Group Rules
+
+SSH (bereits vorhanden)
+
+Type: SSH
+Port: 22
+Source: My IP (oder 0.0.0.0/0)
+
+
+HTTP
+
+Type: HTTP
+Port: 80
+Source: Anywhere (0.0.0.0/0)
+
+
+HTTPS
+
+Type: HTTPS
+Port: 443
+Source: Anywhere (0.0.0.0/0)
+
+
+Kubernetes
+
+Type: Custom TCP
+Port: 6443
+Source: My IP (für kubectl Zugriff)
+```
+![alt text](image-9.png)
+
+
+### K3S Installation
+```
+# Auf EC2 Instanz ausführen:
+curl -sfL https://get.k3s.io | sh -
+
+# kubectl konfigurieren
+sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+sudo chown $USER ~/.kube/config
+
+# Cluster Status prüfen
+kubectl get nodes
+```
+![alt text](image-11.png)
