@@ -1,0 +1,27 @@
+# Im Hauptverzeichnis deines Repos
+cat > .gitignore << 'EOF'
+# Secrets - NIEMALS committen!
+secrets/*.yaml
+secrets/*.yml
+*.secret
+*.key
+*.pem
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# Backup files
+*.bak
+*.backup
+EOF
