@@ -1094,5 +1094,24 @@ docker push gitlilia/trackmygym-nginx:v1.0.0
 
 ![alt text](image-18.png)
 
-test
+### Repo in die Instanz Clonen
 
+````
+git clone https://github.com/gitlilia/ICTNE24_Semesterarbeit4_L.M.git
+````
+
+![alt text](image-19.png)
+
+### ArgoCD Installieren
+````
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+````
+
+
+**Das dauert ca. 1 Minute...** ☕
+
+#### Status der Pods überprüfen:
+````
+kubectl get pods -n argocd -w
+````
+![alt text](image-20.png)

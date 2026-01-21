@@ -1,0 +1,54 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: trackmygym-ingress
+  namespace: trackmygym
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  # Frontend - Main Application
+  - host: trackmygym.72-44-53-164.sslip.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend
+            port:
+              number: 5000
+  
+  # API Routes (optional - falls du API direkt exponieren willst)
+  - host: api.72-44-53-164.sslip.io
+    http:
+      paths:
+      - path: /users
+        pathType: Prefix
+        backend:
+          service:
+            name: user-service
+            port:
+              number: 5001
+      - path: /workouts
+        pathType: Prefix
+        backend:
+          service:
+            name: workout-service
+            port:
+              number: 5002
+      - path: /stats
+        pathType: Prefix
+        backend:
+          service:
+            name: stats-service
+            port:
+              number: 5003
+      - path: /weather
+        pathType: Prefix
+        backend:
+          service:
+            name: weather-service
+            port:
+              number: 5004

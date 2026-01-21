@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: workout-service
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/gitlilia-tbz/ICTNE24_Semesterarbeit4_L.M.git
+    targetRevision: main
+    path: k8s/apps/workout-service
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: trackmygym
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

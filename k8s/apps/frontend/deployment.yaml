@@ -1,1 +1,54 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: trackmygym
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: gitlilia/trackmygym-frontend:v1.0.0
+        ports:
+        - containerPort: 5000
+        env:
+        - name: FLASK_ENV
+          value: "production"
+        - name: FLASK_DEBUG
+          value: "False"
+        - name: SECRET_KEY
+          value: "change-this-secret-key-in-production"
+        - name: USER_SERVICE_URL
+          value: "http://user-service:5001"
+        - name: WORKOUT_SERVICE_URL
+          value: "http://workout-service:5002"
+        - name: STATS_SERVICE_URL
+          value: "http://stats-service:5003"
+        - name: WEATHER_SERVICE_URL
+          value: "http://weather-service:5004"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            port: 5000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /api/health
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 5
