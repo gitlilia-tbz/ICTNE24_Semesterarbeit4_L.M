@@ -1084,3 +1084,15 @@ docker push gitlilia/trackmygym-nginx:v1.0.0
 | **3. Nginx Ingress** | Ingress Controller | • ingress.yaml (mit sslip.io)<br>• nginx-ingress-controller.yaml |
 | **4. ArgoCD Applications** | GitOps | • frontend-app.yaml<br>• user-service-app.yaml<br>• workout-service-app.yaml<br>• stats-service-app.yaml<br>• weather-service-app.yaml<br>• database-app.yaml |
 | **5. Monitoring** | Auto-Scaling | • HPA (Horizontal Pod Autoscaler) |
+
+### Elastic IP
+
+#### Region: us-east-1
+#### Elastic IP: 72.44.53.164
+- Frontend: http://trackmygym.72-44-53-164.sslip.io
+- ArgoCD UI: http://argocd.72-44-53-164.sslip.io
+
+![alt text](image-18.png)
+
+test
+
