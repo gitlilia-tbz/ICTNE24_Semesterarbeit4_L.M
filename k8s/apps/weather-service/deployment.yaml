@@ -24,7 +24,7 @@ spec:
         - name: FLASK_DEBUG
           value: "False"
         - name: OPENWEATHER_API_KEY
-          value: "demo_key"  # TODO: Ersetze mit echtem API Key
+          value: 1499646dc2b2cefee8fc81d240052316  # TODO: Ersetze mit echtem API Key
         resources:
           requests:
             memory: "128Mi"
