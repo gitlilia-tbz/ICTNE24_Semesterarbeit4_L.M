@@ -1115,3 +1115,135 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 kubectl get pods -n argocd -w
 ````
 ![alt text](image-20.png)
+
+#### Argo CD ohne Hosts weiterführen:
+````
+# 4. ArgoCD Ingress ohne Host
+cat > ~/argocd-ingress.yaml << 'EOF'
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-server-ingress
+  namespace: argocd
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443
+EOF
+
+kubectl apply -f ~/argocd-ingress.yaml
+
+# 5. Port herausfinden
+kubectl get svc -n ingress-nginx | grep ingress-nginx-controller
+````
+Erklärung:
+
+Mit Host im Ingress:
+yaml
+````
+rules:
+- host: argocd.72-44-53-164.sslip.io  # Erwartet diesen Host Header
+  http:
+    paths:
+    - path: /
+Was passiert:
+
+Browser ruft auf: http://72.44.53.164:30444
+Browser sendet Host Header: 72.44.53.164 (oder 72.44.53.164:30444)
+Ingress erwartet aber: argocd.72-44-53-164.sslip.io
+Host matched nicht → 404 Error! ❌
+
+
+Ohne Host im Ingress:
+yamlrules:
+- http:  # Kein Host angegeben = matched ALLE Requests
+    paths:
+    - path: /
+```
+
+**Was passiert:**
+- Browser ruft auf: `http://72.44.53.164:30444`
+- Browser sendet Host Header: `72.44.53.164:30444`
+- Ingress: "Egal welcher Host, ich route alles!" ✅
+- **Funktioniert!** ✅
+
+---
+
+## Warum funktioniert sslip.io nicht mit NodePort?
+
+**sslip.io funktioniert nur mit Standard-Ports:**
+````
+
+✅ **Funktioniert:**
+```
+http://argocd.72-44-53-164.sslip.io       (Port 80)
+https://argocd.72-44-53-164.sslip.io      (Port 443)
+```
+
+❌ **Funktioniert NICHT:**
+```
+http://argocd.72-44-53-164.sslip.io:30444
+Weil der Browser dann den Host Header argocd.72-44-53-164.sslip.io:30444 sendet, und sslip.io löst das nicht korrekt auf!
+
+````
+
+### Port-Forward für Benutzeroberfläche
+
+````
+# Port-Forward im Hintergrund
+nohup kubectl port-forward svc/argocd-server -n argocd 8080:80 --address 0.0.0.0 > /tmp/argocd-portforward.log 2>&1 &
+```
+
+---
+
+### Schritt 2: Port 8080 in Security Group öffnen
+
+**AWS Console:**
+1. EC2 → Security Groups
+2. `trackmygym-k8s-sg`
+3. **Add inbound rule:**
+   - Type: Custom TCP
+   - Port: **8080**
+   - Source: Anywhere (0.0.0.0/0)
+4. Save
+
+---
+
+### Schritt 3: Browser öffnen
+```
+http://72.44.53.164:8080
+````
+
+#### Passwort holen
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+echo
+
+![alt text](image-21.png)
+
+### Repo mit ArgoCD Verbinden
+
+ADD GIF HERE************************
+
+![alt text](image-22.png)
+
+### Microservice-Applikationen erstellen
+
+````
+# Alle anderen Applications erstellen
+kubectl apply -f frontend-app.yaml
+kubectl apply -f user-service-app.yaml
+kubectl apply -f workout-service-app.yaml
+kubectl apply -f stats-service-app.yaml
+kubectl apply -f weather-service-app.yaml
+````
