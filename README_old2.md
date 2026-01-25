@@ -25,8 +25,6 @@
 
 ## Inhaltsverzeichnis
 
-## 📋 Projektübersicht
-
 ### [1. 📊 Projektmanagement](#1--projektmanagement)
 
 * [1.1 Projektbeschreibung](#11-projektbeschreibung)
@@ -53,30 +51,25 @@
 * [3.4 YAML Files](#34-yaml-files)
 * [3.5 Produktionsumgebung](#35-produktionsumgebung)
 
-### [4. 📱 User Interface](#4--user-interface)
+### [4. 🧪 Testing & Qualitätssicherung](#5--testing--qualitätssicherung)
 
-* [4.1 Frontend Design](#41-frontend-design)
-* [4.2 User Experience](#42-user-experience)
+* [4.1 User-Testing](#52-user-testing)
+* [4.2  10 Testfälle](#53-10-testfälle)
 
-### [5. 🧪 Testing & Qualitätssicherung](#5--testing--qualitätssicherung)
+### [5. 📈 Ergebnisse & Reflexion](#6--ergebnisse--reflexion)
 
-* [5.1 User-Testing](#52-user-testing)
-* [5.2  10 Testfälle](#53-10-testfälle)
+* [5.1 Erreichte Ziele](#61-erreichte-ziele)
+* [5.2 Herausforderungen](#62-herausforderungen)
+* [5.3 Lessons Learned](#63-lessons-learned)
+* [5.4 Ausblick](#64-ausblick)
 
-### [6. 📈 Ergebnisse & Reflexion](#6--ergebnisse--reflexion)
+### [6. 📚 Anhang](#7--anhang)
 
-* [6.1 Erreichte Ziele](#61-erreichte-ziele)
-* [6.2 Herausforderungen](#62-herausforderungen)
-* [6.3 Lessons Learned](#63-lessons-learned)
-* [6.4 Ausblick](#64-ausblick)
-
-### [7. 📚 Anhang](#7--anhang)
-
-* [7.1 Code-Repository](#71-code-repository)
-* [7.2 Verwendete Technologien](#72-verwendete-technologien)
-* [7.3 Quellen](#73-quellen)
-* [7.4 Glossar](#74-glossar)
-* [7.5 Kontaktangaben](#75-kontaktangaben)
+* [6.1 Code-Repository](#71-code-repository)
+* [6.2 Verwendete Technologien](#72-verwendete-technologien)
+* [6.3 Quellen](#73-quellen)
+* [6.4 Glossar](#74-glossar)
+* [6.5 Kontaktangaben](#75-kontaktangaben)
 
 ---
 

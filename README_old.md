@@ -1,7 +1,7 @@
 # README
 
 # 🏋️‍♀️ FitTracker Pro - Kubernetes Version. Tracke. Wachse. Gewinne.
-![alt text](images/image-4.png)
+![alt text](image-4.png)
 
 ### Fitness Tracking Platform - Migriert auf Kubernetes
 
@@ -25,6 +25,8 @@
 
 ## Inhaltsverzeichnis
 
+## 📋 Projektübersicht
+
 ### [1. 📊 Projektmanagement](#1--projektmanagement)
 
 * [1.1 Projektbeschreibung](#11-projektbeschreibung)
@@ -37,39 +39,39 @@
   * [1.6.2 Sprint 2](#162-sprint-2)
   * [1.6.3 Sprint 3](#163-sprint-3)
 
-* [1.7 Projekt Gantt-Diagramm](#17-projekt-gantt-diagramm)
+* [1.7 Projekt Gantt-Diagramm](#18-projekt-gantt-diagramm)
 
 ### [2. 🛠️ Technische Dokumentation](#2-️-technische-dokumentation)
 
 * [2.1 Architektur-Übersicht](#21-architektur-übersicht)
 
-### [3. ☁️ Deployment](#3-️-deployment)
+### [3. ☁️ Deployment](#3-️-deployment--devops)
 
 * [3.1 AWS EC2 Setup](#31-aws-ec2-setup)
 * [3.2 Kubernetes Setup](#32-kubernetes-setup)
-* [3.3 ArgoCD](#33-argocd)
+* [3.3 ArgoCD](#33-ArgoCD)
 * [3.4 YAML Files](#34-yaml-files)
 * [3.5 Produktionsumgebung](#35-produktionsumgebung)
 
-### [4. 🧪 Testing & Qualitätssicherung](#4--testing--qualitätssicherung)
+### [4. 🧪 Testing & Qualitätssicherung](#5--testing--qualitätssicherung)
 
-* [4.1 User-Testing](#41-user-testing)
-* [4.2  10 Testfälle](#42-10-testfälle)
+* [4.1 User-Testing](#52-user-testing)
+* [4.2  10 Testfälle](#53-10-testfälle)
 
-### [5. 📈 Ergebnisse & Reflexion](#5--ergebnisse--reflexion)
+### [5. 📈 Ergebnisse & Reflexion](#6--ergebnisse--reflexion)
 
-* [5.1 Erreichte Ziele](#51-erreichte-ziele)
-* [5.2 Herausforderungen](#52-herausforderungen)
-* [5.3 Lessons Learned](#53-lessons-learned)
-* [5.4 Ausblick](#54-ausblick)
+* [5.1 Erreichte Ziele](#61-erreichte-ziele)
+* [5.2 Herausforderungen](#62-herausforderungen)
+* [5.3 Lessons Learned](#63-lessons-learned)
+* [5.4 Ausblick](#64-ausblick)
 
-### [6. 📚 Anhang](#6--anhang)
+### [6. 📚 Anhang](#7--anhang)
 
-* [6.1 Code-Repository](#61-code-repository)
-* [6.2 Verwendete Technologien](#62-verwendete-technologien)
-* [6.3 Quellen](#63-quellen)
-* [6.4 Glossar](#64-glossar)
-* [6.5 Kontaktangaben](#65-kontaktangaben)
+* [6.1 Code-Repository](#71-code-repository)
+* [6.2 Verwendete Technologien](#72-verwendete-technologien)
+* [6.3 Quellen](#73-quellen)
+* [6.4 Glossar](#74-glossar)
+* [6.5 Kontaktangaben](#75-kontaktangaben)
 
 ---
 
@@ -113,7 +115,7 @@ Durch die Migration zu Kubernetes wird die Applikation noch hochverfügbarer und
 
 Projektzeitleiste und Meilensteine
  
-![alt text](images/image-2.png)
+![alt text](image-2.png)
 
 ## 1.3 Risiko-Evaluation
 Identifizierte Projektrisiken und deren Bewertung.
@@ -171,13 +173,13 @@ graph TB
 
 ## 1.4 Risiko-Matrix
 Übersicht der Risiken nach Wahrscheinlichkeit und Auswirkung.
-![alt text](images/image-1.png)
+![alt text](image-1.png)
 
 
 ## 1.5 SWOT-Analyse 
 Stärken, Schwächen, Chancen und Risiken des Projektes innerhalb der SWOT Analyse.
 
-![alt text](images/image.png)
+![alt text](image.png)
 
 ## 1.6 Sprint-Dokumentation
 ### 1.6.1 Sprint 1
@@ -275,10 +277,10 @@ damit ich **meine Stakeholder den Fortschritt mitverfolgen können und ich Über
 - Projektkonzipierung wurde erstellt
 - Erster Entwurf für das Technische Design wurde erstellt
 
-![alt text](images/image-2.png)
+![alt text](image-2.png)
 *_KanBan Angfangs Sprint_
 
-![alt text](images/image-3.png)
+![alt text](image-3.png)
 *_KanBan Ende Sprint_
 
 #### 🏔️​ **Herausforderungen**
@@ -434,7 +436,7 @@ damit ich **eine stabile Umgebung gewährleisten kann**
 - ...
 - ...
 
-![alt text](images/image-3.png)
+![alt text](image-3.png)
 *_KanBan Ende Sprint_
 
 #### 🏔️​ **Herausforderungen**
@@ -599,14 +601,8 @@ damit ich den Dozenten die Bewertung meines Projektes ermögliche.
 - ...
 - ...
 
-## 1.7 Projekt Gantt-Diagramm
-
-*Gantt-Diagramm wird hier eingefügt*
-
----
-
-# 2. 🛠️ Technische Dokumentation
-## 2.1 Architektur-Übersicht
+# 2 Technische Dokumentation
+## 2.1 Architektur Übersicht
 
 Technische übersicht zur Migrierten Architektur:
 
@@ -695,7 +691,7 @@ graph TB
     class DB db
 ```
 
-## 2.1 Architektur-Übersicht - Angepasst
+## 2.1 Architektur Übersicht - Angepasst
 
 Nach Besprechnungen mit den Dozenten Philip Stark sowie Thanam Pangri bin ich auf die Idee einer Anpassung der Technischen Lösung gekommen.
 Diese ist auf Positive Rückmeldung seitens der beiden Dozenten gestossen.
@@ -821,15 +817,15 @@ graph TB
   
  | Somit hat sich auch ein Element meiner Sprint Übersicht angepasst:
 
-![alt text](images/image-3.png)
+![alt text](image-3.png)
 
 
-# 3. ☁️ Deployment
+# 3. Deployment
 ## 3.1 AWS EC2 Setup
 
 ### Kostenmanagement
 #### Billing-Alerts und threshholds für aktive Sessions
-![alt text](images/image-5.png)
+![alt text](image-5.png)
 
 
 ### EC2 Eigenschaften
@@ -841,13 +837,13 @@ graph TB
 # - Storage: 30 GB SSD minimum
 # - Security Group: Ports 22, 80, 443, 6443 (Kubernetes API)
 ```
-![alt text](images/image-6.png)
+![alt text](image-6.png)
 
 #### Eigenschaften des Betriebssystem
-![alt text](images/image-10.png)
+![alt text](image-10.png)
 #### User Data Eintrag
 Damit das System auf dem neusten Stand bleibt
-![alt text](images/image-8.png)
+![alt text](image-8.png)
 
 
 #### Eigenschaften der Security Group Regeln
@@ -881,7 +877,7 @@ Type: Custom TCP
 Port: 6443
 Source: My IP (für kubectl Zugriff)
 ```
-![alt text](images/image-9.png)
+![alt text](image-9.png)
 
 ## 3.2 Kubernetes Setup
 ### K3S Installation
@@ -896,7 +892,7 @@ sudo chown $USER ~/.kube/config
 # Cluster Status prüfen
 kubectl get nodes
 ```
-![alt text](images/image-11.png)
+![alt text](image-11.png)
 
 ### Bestehende Sudo Berechtigungen 
 
@@ -974,7 +970,7 @@ kubectl create namespace trackmygym
 # Überprüfen
 kubectl get namespaces
 ```
-![alt text](images/image-12.png)
+![alt text](image-12.png)
 
 ### Repository Struktur
 ````
@@ -1044,9 +1040,9 @@ docker build -t gitlilia/trackmygym-weather-service:v1.0.0 ./weather-service
 docker build -t gitlilia/trackmygym-nginx:v1.0.0 ./nginx
 ````
 #### Nachweis Build-Prozess
-![alt text](images/image-13.png)
+![alt text](image-13.png)
 #### Nachweis Build-Prozess Erfolgreich
-![alt text](images/image-14.png)
+![alt text](image-14.png)
 
 ````
 # Alle Images pushen
@@ -1059,9 +1055,9 @@ docker push gitlilia/trackmygym-nginx:v1.0.0
 ````
 
 #### Nachweis Push-Prozess
-![alt text](images/image-15.png)
+![alt text](image-15.png)
 #### Nachweis Push-Prozess Erfolgreich
-![alt text](images/image-16.png)
+![alt text](image-16.png)
 #### Docker-Hub Übersicht
 - ✅ trackmygym-frontend
 - ✅ trackmygym-user-service
@@ -1070,10 +1066,8 @@ docker push gitlilia/trackmygym-nginx:v1.0.0
 - ✅ trackmygym-weather-service
 - ✅ trackmygym-nginx
   
-![alt text](images/image-17.png)
+![alt text](image-17.png)
 
-
-## 3.4 YAML Files
 
 ### Kubernetes Manifests
 # Kubernetes Manifests Übersicht
@@ -1086,8 +1080,6 @@ docker push gitlilia/trackmygym-nginx:v1.0.0
 | **4. ArgoCD Applications** | GitOps | • frontend-app.yaml<br>• user-service-app.yaml<br>• workout-service-app.yaml<br>• stats-service-app.yaml<br>• weather-service-app.yaml<br>• database-app.yaml |
 | **5. Monitoring** | Auto-Scaling | • HPA (Horizontal Pod Autoscaler) |
 
-## 3.5 Produktionsumgebung
-
 ### Elastic IP
 
 #### Region: us-east-1
@@ -1095,7 +1087,7 @@ docker push gitlilia/trackmygym-nginx:v1.0.0
 - Frontend: http://trackmygym.72-44-53-164.sslip.io
 - ArgoCD UI: http://argocd.72-44-53-164.sslip.io
 
-![alt text](images/image-18.png)
+![alt text](image-18.png)
 
 ### Repo in die Instanz Clonen
 
@@ -1103,9 +1095,7 @@ docker push gitlilia/trackmygym-nginx:v1.0.0
 git clone https://github.com/gitlilia/ICTNE24_Semesterarbeit4_L.M.git
 ````
 
-![alt text](images/image-19.png)
-
-## 3.3 ArgoCD
+![alt text](image-19.png)
 
 ### ArgoCD Installieren
 ````
@@ -1119,7 +1109,7 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 ````
 kubectl get pods -n argocd -w
 ````
-![alt text](images/image-20.png)
+![alt text](image-20.png)
 
 #### Argo CD ohne Hosts weiterführen:
 ````
@@ -1234,13 +1224,13 @@ http://72.44.53.164:8080
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 echo
 
-![alt text](images/image-21.png)
+![alt text](image-21.png)
 
 ### Repo mit ArgoCD Verbinden
 
 ADD GIF HERE************************
 
-![alt text](images/image-22.png)
+![alt text](image-22.png)
 
 ### Microservice-Applikationen erstellen
 
@@ -1252,61 +1242,3 @@ kubectl apply -f workout-service-app.yaml
 kubectl apply -f stats-service-app.yaml
 kubectl apply -f weather-service-app.yaml
 ````
-
----
-
-# 4. 🧪 Testing & Qualitätssicherung
-
-## 4.1 User-Testing
-
-*User-Testing Dokumentation wird hier eingefügt*
-
-## 4.2 10 Testfälle
-
-*Testfälle werden hier eingefügt*
-
----
-
-# 5. 📈 Ergebnisse & Reflexion
-
-## 5.1 Erreichte Ziele
-
-*Erreichte Ziele werden hier dokumentiert*
-
-## 5.2 Herausforderungen
-
-*Herausforderungen werden hier dokumentiert*
-
-## 5.3 Lessons Learned
-
-*Lessons Learned werden hier dokumentiert*
-
-## 5.4 Ausblick
-
-*Ausblick wird hier dokumentiert*
-
----
-
-# 6. 📚 Anhang
-
-## 6.1 Code-Repository
-
-- GitHub Repository: [https://github.com/gitlilia-tbz/ICTNE24_Semesterarbeit3_L.M](https://github.com/gitlilia-tbz/ICTNE24_Semesterarbeit3_L.M)
-
-## 6.2 Verwendete Technologien
-
-*Technologie-Liste wird hier eingefügt*
-
-## 6.3 Quellen
-
-*Quellenverzeichnis wird hier eingefügt*
-
-## 6.4 Glossar
-
-*Glossar wird hier eingefügt*
-
-## 6.5 Kontaktangaben
-
-**Studierende:** Lilia Mechani
-**Semester:** 4
-**Dozenten:** (PRJ) Corrado Parisi (CNC) Philip Stark
