@@ -225,6 +225,7 @@ Stärken, Schwächen, Chancen und Risiken des Projektes innerhalb der SWOT Analy
 ---
 
 📍​**User Story 1:**
+https://liliamechani.atlassian.net/browse/SCRUM-1
 
 
 | Title:                   | Priority: | Estimate: |
@@ -246,6 +247,7 @@ damit ich **Ready bin, um das Projekt zu entwickeln und meinen Vortschritt festz
 ---
 
 📍​**User Story 2:**
+https://liliamechani.atlassian.net/browse/SCRUM-2
 
 
 | Title:             | Priority: | Estimate: |
@@ -267,6 +269,7 @@ damit ich **einen ersten Anhaltspunkt zum Architekturdesign habe, an welches sic
 ---
 
 📍​**User Story 3:**
+https://liliamechani.atlassian.net/browse/SCRUM-3
 
 
 | Title:              | Priority: | Estimate: |
@@ -354,6 +357,7 @@ damit ich **meine Stakeholder den Fortschritt mitverfolgen können und ich Über
 ---
 
 📍​**User Story 4:**
+https://liliamechani.atlassian.net/browse/SCRUM-13
 
 
 | Title:                   | Priority: | Estimate: |
@@ -374,6 +378,7 @@ damit ich **Ready bin, um die Services zu Verknüpfen und ArgoCD zu initiieren**
 ---
 
 📍​**User Story 5:**
+https://liliamechani.atlassian.net/browse/SCRUM-14
 
 
 | Title:             | Priority: | Estimate: |
@@ -395,6 +400,7 @@ damit ich **auf neine erste funktionstüchtige ArgoCD Instanz zugreifen kann**.
 
 ---
 📍​**User Story 6:**
+https://liliamechani.atlassian.net/browse/SCRUM-15
 
 
 | Title:              | Priority: | Estimate: |
@@ -414,6 +420,7 @@ damit ich **eine Übersicht auf meine aktiven Cluster sowie der Microservices er
 
 
 📍​**User Story 7:**
+https://liliamechani.atlassian.net/browse/SCRUM-17
 
 
 | Title:              | Priority: | Estimate: |
@@ -509,6 +516,7 @@ ArgoCD wurde als GitOps-Tool eingerichtet und alle Services erfolgreich deployed
 ---
 
 📍​**User Story 8:**
+https://liliamechani.atlassian.net/browse/SCRUM-18
 
 
 | Title:                   | Priority: | Estimate: |
@@ -528,6 +536,7 @@ damit ich **dem Projekt einen Feinschliff verleien kann (GUI, Zugriffe)**.
 ---
 
 📍​**User Story 9:**
+https://liliamechani.atlassian.net/browse/SCRUM-19
 
 
 | Title:             | Priority: | Estimate: |
@@ -547,6 +556,7 @@ damit ich **Alle Themenbereiche des Projektes abgedeckt habe**.
 
 ---
 📍​**User Story 10:**
+https://liliamechani.atlassian.net/browse/SCRUM-20
 
 
 | Title:              | Priority: | Estimate: |
@@ -561,7 +571,8 @@ damit ich **das Projekt den Stakeholdern vorstellen kann**
 
 - PowerPoint Präsentation mit live-Demo
 ---
-📍​**User Story 10:**
+📍​**User Story 11:**
+https://liliamechani.atlassian.net/browse/SCRUM-21
 
 
 | Title:              | Priority: | Estimate: |
