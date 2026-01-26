@@ -21,7 +21,7 @@
 [🚀 Live Demo](http://52.202.224.208/) • [📖 Repo](https://github.com/gitlilia-tbz/ICTNE24_Semesterarbeit3_L.M) • [🏗️ KanBan](https://semesterarbeit3liliam.atlassian.net/jira/software/projects/KAN/boards/1)
 
 # Live Update:
-|ArgoCD Setup: In Progress /// Aktualisierung Jira-Board: In Progress|
+- Vollendung der Dokumentation: In Progress
 
 ## Inhaltsverzeichnis
 
@@ -172,6 +172,33 @@ graph TB
 ## 1.4 Risiko-Matrix
 Übersicht der Risiken nach Wahrscheinlichkeit und Auswirkung.
 ![alt text](images/image-1.png)
+
+## Massnahmen zur Risiko-Matrix
+
+### Hohe Auswirkung
+
+| Risiko | Massnahme |
+|--------|-----------|
+| Cluster-Fehlkonfiguration | Infrastructure-as-Code mit Code-Reviews einführen (KI-gestützt). |
+| Fehlerhafte Architektur | Architektur-Review vor Go-Live (KI-gestützt). |
+| Technische Schulden | Sprints mit Bufferzeit fest einplanen. |
+| API Gateway Kommunikation | Ingress-Controller und End-to-End-Tests durchführen. |
+| Secrets-Verwaltung | Vault oder AWS Secrets Manager einsetzen. |
+| Sprint-Zeitplan Verzug | 20% Puffer einplanen, kritischen Pfad tracken. |
+
+### Mittlere Auswirkung
+
+| Risiko | Massnahme |
+|--------|-----------|
+| Service-Integration Probleme | Service Mesh evaluieren. |
+| Ressourcen-Limits falsch gesetzt | Lasttests durchführen, Limits anpassen. |
+| AWS-Kosten Überschreitung | Budget-Alerts und wöchentliches Monitoring. |
+| Datenverlust bei Neustart | Stabile Datenbanken implementieren. |
+| Deployment-Fehler Pipeline | Automatisierte Tests und Rollback einbauen. |
+| Monitoring-Lücken | ArgoCD einsetzen. |
+| Performance-Overhead durch K8s | Autoscaler und Ressourcen-Requests optimieren. |
+| Dokumentation unvollständig | Definition of Done festlegen. |
+| Learning Curve | Rücksprache mit den Dozenten durchführen. |
 
 
 ## 1.5 SWOT-Analyse 
@@ -381,16 +408,7 @@ damit ich **eine Übersicht auf meine aktiven Cluster sowie der Microservices er
 **Akzeptanzkriterien:**
 
 - WebGUI von Argo CD ersichtlich
----
 
-#### **Aufgabenübersicht Sprint 2**
-
-
-| Aufgabe                  | Status              |
-| -------------------------- | --------------------- |
-| User Story 1 | Alternativ erledigt |
-| User Story 2       | In Progress         |
-| User Story 3    | In Progress       |
 
 ---
 
@@ -420,9 +438,9 @@ damit ich **eine stabile Umgebung gewährleisten kann**
 | Aufgabe                  | Status              |
 | -------------------------- | --------------------- |
 | User Story 4 | Erledigt |
-| User Story 5       | In Progress         |
-| User Story 6    | In Progress       |
-| User Story 7    | In Progress       |
+| User Story 5       | Erledigt         |
+| User Story 6    | Erledigt      |
+| User Story 7    | Erledigt       |
 
 ---
 
@@ -430,21 +448,32 @@ damit ich **eine stabile Umgebung gewährleisten kann**
 
 ⭐​​**Was wurde erreicht?**
 
-- EC2 Instanz erstellt
-- ...
-- ...
+- EC2 Instanz erstellt und Security Group konfiguriert
+- Kubernetes auf der Instanz Installiert
+- Für Docker-Hub Images generiert
+- Datei-Struktur für die Microservices erstellt
+- ArgoCD Installation sowie Verfügbarkeit der Konsole gewährleistet
+- Microservices hochgefahren
+- Fehler behoben
+- Microservices getestet
+
+In Sprint 2 wurde die Cloud-Infrastruktur aufgebaut: EC2-Instanz erstellt, Security Group konfiguriert und Kubernetes (K3s) installiert. Alle Microservices wurden als Docker Images auf Docker Hub gepusht und die Kubernetes-Manifests im Repository strukturiert angelegt.
+ArgoCD wurde als GitOps-Tool eingerichtet und alle Services erfolgreich deployed. Nach Fehlerbehebung und Tests ist die Applikation nun vollständig funktionsfähig und öffentlich erreichbar.
+  
 
 ![alt text](images/image-3.png)
-*_KanBan Ende Sprint_
+![alt text](images/sprint2_ende.png)
 
 #### 🏔️​ **Herausforderungen**
 
-- ...
+-  Der Sprint wurde durch gesundheitliche Vorfälle im persönlichen Umfeld verzögert. Dadurch verschob sich die Zeitspanne von Sprint 2, was zu zeitlichen Konflikten mit anderen Verpflichtungen führte.
 
 
 #### 📚​ **Lessons Learned**
 
-- ...
+- Ich habe Kubernetes näher kennengelernt und das Konzept von ArgoCD sowie Docker Hub mit Images besser verstanden, dadurch fiel mir die Arbeit mit diesen Technologien etwas einfacher. Zudem habe ich die wesentlichen Unterschiede zwischen Kubernetes/ArgoCD und Docker zusätzlich besser verstanden: Docker dient eher der Containerisierung einzelner Anwendungen, während Kubernetes diese Container orchestriert, skaliert und verwaltet. ArgoCD ergänzt dies durch GitOps – Änderungen im Git-Repository werden automatisch auf den Kubernetes-Cluster synchronisiert und stets überwacht.
+
+- Was die Projektplanung anbelangt heisst es: die Sprints Zeitnahe / Zeitgerecht zu aktualisieren sowie das Review pünktlich zum Ende des Sprints zu dokumentieren. Wenn dies nicht möglich erscheint, Stakeholder pünktlich zu informieren.
 
 ---
 
@@ -453,13 +482,13 @@ damit ich **eine stabile Umgebung gewährleisten kann**
 
 | **📈 More Of**                                                                                                                                                                                             | **📉 Less Of**                                                                                       | **✅ Keep Doing**                                                                                                                                                       | **🛑 Stop Doing**                                                                                                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **...**<br>• ... <br> | **...**<br>• ... | **....** <br>• ... <br><br>** ...** | ***...***<br>
+| <br>**Frühzeitig mit neuen Technologien experimentieren, Dokumentation während der Arbeit erstellen, Pufferzeit für unvorhergesehene Ereignisse, Stakeholder frühzeitig informieren**  <br> | <br> **Mehrere komplexe Themen gleichzeitig angehen** | **Strukturierte Ordnerstruktur im Repository, GitOps-Ansatz mit ArgoCD** <br> | ***Zu lange an einem Problem festhalten ohne Hilfe zu suchen***<br>
 
 #### **Ausblick auf Sprint 3**
 
-- ....
-- ...
-- ...
+- Abschluss der Dokumentation im GitRepo
+- Start Design der Pitch-Präsentation
+- Abgabe des Projektes
 ### 1.6.3 Sprint 3
 #### **Zeitraum**
 
