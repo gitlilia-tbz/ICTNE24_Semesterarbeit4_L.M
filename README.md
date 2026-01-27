@@ -1318,11 +1318,73 @@ kubectl apply -f weather-service-app.yaml
 
 ## 4.1 User-Testing
 
-*User-Testing Dokumentation wird hier eingefügt*
+**Benutzertests und Feedback:** Beta-Test
+
+📋 Beta-Test Phase Dokumentation
+
+
+
+**Zeitraum:** 3 Tage (6.7. - 8.7.2025)  
+**Testpersonen:** 2 (1 männlich/28J, 1 weiblich/31J) - beide sportlich aktiv  
+**Gesamtbewertung:** Sehr gut ⭐⭐⭐
+
+---
+
+**👥 Testpersonen**
+- **S. (M, 28):** Kraftsportler, 5x/Woche Training
+- **M. (W, 31):** Kickboxen und Joggen, , 1x/Woche Training
+---
+
+**✅ Positive Ergebnisse**
+- **Benutzerfreundlichkeit:** App ist übersichtlich und schnell bedienbar
+- **Weather-Feature:** Überraschend nützlich für Outdoor-Sport-Planung
+- **Design:** Moderne, ansprechende Optik
+---
+
+**🔧 Feedback & Verbesserungswünsche seitens Probanten**
+
+| Feature | Priorität | Details |
+|---------|-----------|---------|
+| **Schrittzähler Integration** | Hoch | Beide wünschen tägliche Schritte-Tracking |
+| **Eigene Tagesziele** | Hoch | Personalisierte Trainings-/Kalorienziele definieren |
+| **Anpassbare Themes** | Mittel | Dark Mode und Farbthemen-Auswahl |
+| **Dauerhafte Verfügbarkeit** | Kritisch | App war 2x offline (AWS Learner Lab Problem) |
+
+---
+
+**🐛 Identifizierte Probleme**
+- **Server Downtime:** App nicht erreichbar durch AWS Learner Lab Limitationen
+
+---
+
+**🎯 Nächste Schritte**
+1. **Kritisch:** Vielleicht eine Migration zu stabilerer Cloud-Infrastruktur
+2. **Hoch:** Schrittzähler + Tagesziele implementieren
+3. **Mittel:** Theme-System mit Dark Mode oder weiteren Farben
+
+**Fazit:** App ist grundsätzlich sehr gut, braucht aber stabile Hosting-Lösung und erweiterte Personalisierung für Produktiveinsatz.
+
++++ Feeback seitens Probanten:
+
+***"Nice", "Das einfache Dashboard gefällt mir mega" "Voll Geil", "Das Design gefällt mir"***
+
 
 ## 4.2 10 Testfälle
 
-*Testfälle werden hier eingefügt*
+| Test # | Wenn das... | Dann das... | Status |
+|--------|-------------|-------------|---------|
+| 1 | User mit neuer Email registriert | Account wird erstellt und in PostgreSQL gespeichert | ✅ PASS |
+| 2 | User mit bereits existierender Email registriert | Fehlermeldung "Email bereits vorhanden" erscheint | ✅ PASS |
+| 3 | Workout mit gültigen Daten (Running, 30min, 300cal) erfasst | Workout wird gespeichert und im Dashboard angezeigt | ✅ PASS |
+| 4 | Mehrere Workouts erfassen | Werden aufgelistet | ✅ PASS |
+| 5 | Live-Anpassungen des Source-Codes aktiv | git Push erfolgreich und im Server ersichtlich | ✅ PASS |
+| 6 | Weather API mit gültigem Key aufgerufen | Live-Wetter für Zürich wird korrekt angezeigt | ✅ PASS |
+| 7 | Weather API mit ungültigem Key aufgerufen | Demo-Mode aktiviert, Fallback-Daten angezeigt | ✅ PASS |
+| 8 | Pods gekillt und wieder hochgefahren | Alle 5 Services (Frontend, User, Workout, Stats, Weather) laufen healthy | ✅ PASS |
+| 9 | Aufrufen der Mobile Version  | Website Mobil erreichbar | ✅ PASS |
+| 10 | Health Sync und Sync zu Repo (ArgoCD-> Repo)| ArgCD erkennt Änderungen | ✅ PASS |
+
+**Test Summary:** 10/10 PASS ✅ | **Success Rate:** 100%
 
 ---
 
