@@ -1438,21 +1438,139 @@ kubectl apply -f weather-service-app.yaml
 ## 6.1 Code-Repository
 
 - GitHub Repository: https://github.com/gitlilia-tbz/ICTNE24_Semesterarbeit4_L.M
-- 
+
 ## 6.2 Verwendete Technologien
 
-*Technologie-Liste wird hier eingefügt*
+### ☁️ Cloud & Infrastruktur
+- **AWS EC2** (t3.medium, Ubuntu 22.04 LTS) - Cloud-Hosting
+- **Kubernetes (K3s)** v1.34.3 - Container-Orchestrierung ⎈
+- **ArgoCD** - GitOps Deployment & Monitoring 🔄
+- **Nginx Ingress Controller** - Load Balancing & Routing ⚡
+
+### 🗄️ Backend & Datenbank
+- **Python** 🐍 3.9 - Programmiersprache
+- **Flask** 🌶️ 2.3.3 - Web-Framework
+- **PostgreSQL** 🐘 15 - Relationale Datenbank
+
+### 📦 Container & Registry
+- **Docker** 🐳 - Containerisierung
+- **Docker Hub** - Image Registry (gitlilia/trackmygym-*)
+
+### 🎨 Frontend
+- **React/Vue.js** ⚛️ - Benutzeroberfläche
+- **Nginx** - Web-Server
+
+### 🚀 DevOps & CI/CD
+- **GitHub** - Versionskontrolle & Repository
+- **GitHub Actions** - CI/CD Pipeline
+- **kubectl** - Kubernetes CLI
+
+### 🌐 APIs & Services
+- **OpenWeatherMap API** ☁️ - Wetterdaten-Integration
+
+### 🛠️ Entwicklungstools
+- **Visual Studio Code** - Code-Editor & Dokumentation
+- **Claude AI & Claude Code** 🤖 - KI-unterstützte Entwicklung
+- **Git** - Versionskontrolle
+
+### 📋 Projektmanagement
+- **Jira** - Aufgabenverwaltung & Kanban Board
+- **Confluence** - Dokumentation (temporär)
+
+### 📈 Monitoring & Skalierung
+- **HPA (Horizontal Pod Autoscaler)** - Automatische Skalierung
+- **ArgoCD Dashboard** - Cluster-Überwachung
+
 
 ## 6.3 Quellen
 
-*Quellenverzeichnis wird hier eingefügt*
+Kubernetes: https://kubernetes.io/
+
+K3S Lightweight Kubernetes: https://k3s.io/
+
+Ingress: https://kubernetes.io/docs/concepts/services-networking/ingress/
+
+PostgreSQL Database: https://www.postgresql.org/
+
+Argo CD Project: https://argoproj.github.io/cd/
+
+Amazon EC2: https://aws.amazon.com/de/ec2/
+
+Docker Hub: https://hub.docker.com/
+
+GitOps Beschreibung: https://www.redhat.com/de/topics/devops/what-is-gitops
+
+Claude Code: https://claude.com/product/claude-code
+
+YAML Files:  https://www.redhat.com/de/topics/automation/what-is-yaml
+
+sslip.io DNS Service: https://sslip.io/
+
+GitHub: https://github.com/ 
+
+Visual Stusio Code IDE: https://code.visualstudio.com/
+
+Agile Manifesto: https://agilemanifesto.org/
+
+Atlassian Jira: https://www.atlassian.com/de/software/jira
+
+SCRUM Vorgehensmodell: https://de.wikipedia.org/wiki/Scrum
+
+Mermaid Diagramming Tool: https://mermaid.js.org/
+
 
 ## 6.4 Glossar
 
-*Glossar wird hier eingefügt*
+| Begriff | Erklärung |
+|---------|-----------|
+| **ArgoCD** | GitOps-Tool für automatisches Deployment in Kubernetes mit Web-GUI. |
+| **AWS EC2** | Virtuelle Server-Instanzen in der Amazon Cloud. |
+| **CI/CD** | Automatisierte Pipeline für Build, Test und Deployment. |
+| **ConfigMap** | Speichert nicht-sensitive Konfigurationsdaten in Kubernetes. |
+| **Container** | Isolierte Laufzeitumgebung für Anwendungen mit allen Abhängigkeiten. |
+| **Deployment** | Definiert gewünschten Zustand von Pods (Image, Replicas). |
+| **Docker** | Plattform zur Containerisierung von Anwendungen. |
+| **Docker Hub** | Cloud-Registry zum Speichern von Docker Images. |
+| **Flask** | Leichtgewichtiges Python-Web-Framework. |
+| **Frontend** | Benutzeroberfläche der Anwendung im Browser. |
+| **GitOps** | Git als zentrale Wahrheitsquelle für Infrastruktur. |
+| **HPA** | Skaliert Pods automatisch bei erhöhter Last. |
+| **Ingress** | Regelt HTTP/HTTPS-Routing von aussen in den Cluster. |
+| **Ingress Controller** | Verarbeitet und leitet eingehende Anfragen weiter (z.B. Nginx). |
+| **K3s** | Leichtgewichtige Kubernetes-Distribution. |
+| **kubectl** | Kommandozeilen-Tool für Kubernetes-Verwaltung. |
+| **Kubernetes (K8s)** | Orchestrierungs-Plattform für Container. |
+| **Load Balancing** | Verteilung von Traffic auf mehrere Server/Pods. |
+| **Manifest** | YAML-Datei zur Beschreibung von Kubernetes-Ressourcen. |
+| **Microservices** | Anwendung aus kleinen, unabhängigen Services. |
+| **Namespace** | Logische Isolation von Ressourcen in Kubernetes. |
+| **Nginx** | Web-Server und Reverse-Proxy. |
+| **NodePort** | Service-Typ mit statischem Port auf jedem Cluster-Node. |
+| **OpenWeatherMap** | Externe API für Wetterdaten. |
+| **Orchestrierung** | Automatisierte Verwaltung von Containern/Services. |
+| **Pod** | Kleinste deploybare Einheit in Kubernetes. |
+| **Port-Forward** | Weiterleitung eines lokalen Ports zu einem Service/Pod. |
+| **PostgreSQL** | Relationale Open-Source-Datenbank. |
+| **PVC** | Fordert dauerhaften Speicherplatz an (Persistent Volume Claim). |
+| **Repository (Repo)** | Versionsverwaltetes Code-/Konfigurations-Verzeichnis. |
+| **Routing** | Weiterleitung von Anfragen an die richtigen Services. |
+| **Secret** | Verschlüsselte Speicherung sensibler Daten in Kubernetes. |
+| **Security Group** | AWS-Firewall-Regeln für EC2-Instanzen. |
+| **Service** | Macht Pods intern im Cluster über stabile IP erreichbar. |
+| **sslip.io** | DNS-Service für automatische IP-zu-Hostname-Auflösung. |
+| **StatefulSet** | Kubernetes-Ressource für zustandsbehaftete Anwendungen. |
+| **SWOT-Analyse** | Analyse von Stärken, Schwächen, Chancen und Risiken. |
+| **User Data** | Skript für automatische Ausführung beim EC2-Start. |
+| **YAML** | Datenformat für Kubernetes-Konfigurationen. |
+
 
 ## 6.5 Kontaktangaben
 
-**Studierende:** Lilia Mechani
-**Semester:** 4
-**Dozenten:** (PRJ) Corrado Parisi (CNC) Philip Stark
+**📎Lilia Mechani**
+
+ 🌐 Mail: lilia.mechani@edu.tbz.ch
+
+ 🏨Technische Berufsschule Zürich TBZ (Höhere Fachschule)
+
+📫Ausstellungsstrasse 70, 8005 Zürich
+
