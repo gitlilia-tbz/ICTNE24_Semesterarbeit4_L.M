@@ -737,7 +737,7 @@ graph TB
 
 ## 2.1 Architektur-Übersicht - Angepasst
 
-Nach Besprechnungen mit den Dozenten Philip Stark sowie Thanam Pangri bin ich auf die Idee einer Anpassung der Technischen Lösung gekommen.
+:bulb: Nach Besprechnungen mit den Dozenten Philip Stark sowie Thanam Pangri bin ich auf die Idee einer Anpassung der Technischen Lösung gekommen.
 Diese ist auf Positive Rückmeldung seitens der beiden Dozenten gestossen.
 
 Anstatt der klassichen DevOps Pipelines via GitHub Actions, setze ich auf eine Umsetzung mit ArgoCD.
@@ -1019,11 +1019,11 @@ kubectl get namespaces
 ### Repository Struktur
 ````
 📂 k8s/
+├── 📄 .gitignore
 ├── 📂 apps/
 │   ├── 📂 frontend/
 │   │   ├── 📄 deployment.yaml
-│   │   ├── 📄 service.yaml
-│   │   └── 📄 kustomization.yaml
+│   │   └── 📄 service.yaml
 │   ├── 📂 user-service/
 │   │   ├── 📄 deployment.yaml
 │   │   └── 📄 service.yaml
@@ -1038,15 +1038,16 @@ kubectl get namespaces
 │       └── 📄 service.yaml
 │
 ├── 📂 database/
-│   ├── 📄 postgres-deployment.yaml
-│   ├── 📄 postgres-service.yaml
 │   ├── 📄 postgres-pvc.yaml
+│   ├── 📄 postgres-statefulset.yaml
 │   ├── 📄 postgres-configmap.yaml
-│   └── 📄 postgres-secret.yaml
+│   ├── 📄 postgres-secret.yaml
+│   └── 📄 postgres-service.yaml
 │
 ├── 📂 ingress/
 │   ├── 📄 ingress.yaml
-│   └── 📄 nginx-ingress-controller.yaml
+│   ├── 📄 nginx-ingress-controller.yaml
+│   └── 📄 trackmygym-ingress.yaml
 │
 ├── 📂 argocd/
 │   ├── 📂 applications/
@@ -1056,24 +1057,32 @@ kubectl get namespaces
 │   │   ├── 📄 user-service-app.yaml
 │   │   ├── 📄 weather-service-app.yaml
 │   │   └── 📄 workout-service-app.yaml
-│   └── 📄 argocd-install.yaml
+│   └── 📄 argocd-ingress.yaml
 │
 ├── 📂 monitoring/
 │   └── 📄 hpa.yaml
 │
 └── 📂 secrets/
     └── 📄 README.md
-
 ````
-
 
 | Datei | Zweck |
 |-------|-------|
-|` deployment.yaml` | Definiert WAS läuft (Image, Replicas, Resources) |
-|`service.yaml` | Macht Pods intern erreichbar (Networking) |
-|`ingress.yaml` | Macht Services von außen erreichbar (HTTP Routing) |
-|`argocd/*-app.yaml` | Sagt ArgoCD: "Deploy diesen Ordner automatisch" |
-|`hpa.yaml` | Auto-Scaling bei Last |
+| `apps/**/deployment.yaml` | Definiert WAS läuft (Image, Replicas, Resources) für jeden Microservice |
+| `apps/**/service.yaml` | Macht Pods intern im Cluster erreichbar (Networking) |
+| `database/postgres-statefulset.yaml` | Definiert Postgres-DB mit persistenten Identitäten (StatefulSet) |
+| `database/postgres-service.yaml` | Macht Postgres-DB intern erreichbar |
+| `database/postgres-pvc.yaml` | Fordert persistenten Speicher für Datenbank-Daten an |
+| `database/postgres-configmap.yaml` | Speichert nicht-sensitive Konfiguration (DB-Name, Port, etc.) |
+| `database/postgres-secret.yaml` | Speichert sensitive Daten (Passwörter) verschlüsselt |
+| `ingress/nginx-ingress-controller.yaml` | Installiert den Nginx Ingress Controller im Cluster |
+| `ingress/ingress.yaml` | Macht Services von außen erreichbar (HTTP Routing) |
+| `ingress/trackmygym-ingress.yaml` | Spezifische Ingress-Regeln für TrackMyGym-Anwendung |
+| `argocd/applications/*-app.yaml` | Sagt ArgoCD: "Deploy diesen Ordner automatisch" (GitOps) |
+| `argocd/argocd-ingress.yaml` | Macht ArgoCD Web-UI von außen erreichbar |
+| `monitoring/hpa.yaml` | Auto-Scaling bei Last (Horizontal Pod Autoscaler) |
+| `secrets/README.md` | Dokumentation zur Verwaltung von Secrets |
+
 
 ### Docker Registry
 
