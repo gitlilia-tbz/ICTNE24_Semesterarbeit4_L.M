@@ -9,8 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: argocd.72-44-53-164.sslip.io
-    http:
+  - http:
       paths:
       - path: /
         pathType: Prefix
