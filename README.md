@@ -19,7 +19,6 @@
 **Studierende:** Lilia Mechani | **Semester:** 4 | **Dozenten:** (PRJ) Corrado Parisi (CNC) Philip Stark.
 
 [🚀 Live Demo](http://72.44.53.164:30080/) • [📖 Repo](https://github.com/gitlilia-tbz/ICTNE24_Semesterarbeit4_L.M) • [🏗️ KanBan](https://semesterarbeit3liliam.atlassian.net/jira/software/projects/KAN/boards/1)
-[🚀 Live Demo](http://52.202.224.208/) • [📖 Repo](https://github.com/gitlilia-tbz/ICTNE24_Semesterarbeit3_L.M) • [🏗️ KanBan](https://semesterarbeit3liliam.atlassian.net/jira/software/projects/KAN/boards/1)
 
 # Live Update:
 - Vollendung der Dokumentation: In Progress
@@ -1037,16 +1036,6 @@ kubectl get namespaces
 │   └── 📂 weather-service/
 │       ├── 📄 deployment.yaml
 │       └── 📄 service.yaml
-k8s/
-├── apps/                           # Alle Microservices
-│   ├── frontend/
-│   │   ├── deployment.yaml         # Pod Definition + Container Image
-│   │   ├── service.yaml            # Internes Networking
-│   │   └── kustomization.yaml      # Optional: Config Management
-│   ├── user-service/               # Gleiche Struktur für jeden Service
-│   ├── workout-service/
-│   ├── stats-service/
-│   └── weather-service/
 │
 ├── 📂 database/
 │   ├── 📄 postgres-deployment.yaml
@@ -1054,20 +1043,10 @@ k8s/
 │   ├── 📄 postgres-pvc.yaml
 │   ├── 📄 postgres-configmap.yaml
 │   └── 📄 postgres-secret.yaml
-├── database/                       # PostgreSQL
-│   ├── postgres-deployment.yaml    # Database Pod
-│   ├── postgres-service.yaml       # Database Service
-│   ├── postgres-pvc.yaml           # Persistent Storage
-│   ├──postgres-configmap.yaml      # init.sql
-|   └──postgres-secret.yaml         # DB Credentials
 │
 ├── 📂 ingress/
 │   ├── 📄 ingress.yaml
 │   └── 📄 nginx-ingress-controller.yaml
-├── ingress/                        # Externes Routing
-│   ├── ingress.yaml                # Traffic Regeln (welcher Host → welcher Service)
-│   ├── argocd-ingress.yaml         # Routing für ArgoCD UI
-│   └── nginx-ingress-controller.yaml
 │
 ├── 📂 argocd/
 │   ├── 📂 applications/
@@ -1078,26 +1057,13 @@ k8s/
 │   │   ├── 📄 weather-service-app.yaml
 │   │   └── 📄 workout-service-app.yaml
 │   └── 📄 argocd-install.yaml
-├── argocd/                         # GitOps Konfiguration
-│   ├── applications/               # ArgoCD Apps (eine pro Service)
-│   │   ├── frontend-app.yaml
-│   │   ├── user-service-app.yaml
-│   │   └── ...
-│   └── argocd-install.yaml
 │
 ├── 📂 monitoring/
 │   └── 📄 hpa.yaml
-├── monitoring/                     # Auto-Scaling
-│   └── hpa.yaml                    # Horizontal Pod Autoscaler Regeln
 │
 └── 📂 secrets/
     └── 📄 README.md
 
-├── secrets/                        # Sensitive Daten (NICHT in Git!)
-│   └── README.md
-│
-├── .gitignore                      # Verhindert Secrets-Commit
-└── README.md                       # Projektdokumentation
 ````
 
 
@@ -1159,42 +1125,6 @@ docker push gitlilia/trackmygym-nginx:v1.0.0
 ## 3.4 YAML Files
 
 ### Kubernetes Manifests
-### 📂 k8s/apps/ (Applikations-Workloads)
-Hier befinden sich die Definitionen für die einzelnen Microservices (Frontend, User, Workout, Stats, Weather).
-
-*   **`deployment.yaml`**: Definiert den Zustand der Anwendung, einschliesslich des Docker-Images, der Anzahl der Replikate und der Ressourcenlimits.
-*   **`service.yaml`**: Stellt eine stabile interne IP-Adresse und einen DNS-Namen bereit, damit andere Pods im Cluster mit diesem Service kommunizieren können.
-*   **`kustomization.yaml`** *(nur Frontend)*: Dient der Verwaltung von Konfigurationsanpassungen, ohne die Originaldateien direkt verändern zu müssen.
-
-### 📂 k8s/database/ (Datenbank-Infrastruktur)
-Verwaltet die PostgreSQL-Datenbank, die als zentraler Datenspeicher dient.
-
-*   **`postgres-deployment.yaml`**: Startet den PostgreSQL-Container und stellt sicher, dass die Datenbank läuft.
-*   **`postgres-service.yaml`**: Macht die Datenbank auf Port 5432 für die Backend-Services intern erreichbar.
-*   **`postgres-pvc.yaml`**: (PersistentVolumeClaim) Fordert dauerhaften Speicherplatz an, damit die Daten auch bei einem Neustart des Pods erhalten bleiben.
-*   **`postgres-configmap.yaml`**: Enthält Konfigurationsdateien wie das `init.sql`-Skript, um die Datenbankstruktur beim ersten Start anzulegen.
-*   **`postgres-secret.yaml`**: Platzhalter für sensible Zugangsdaten; in der Praxis werden diese oft manuell oder verschlüsselt verwaltet.
-
-### 📂 k8s/ingress/ (Externer Zugriff)
-Steuert, wie der Traffic von ausserhalb in das Cluster gelangt.
-
-*   **`nginx-ingress-controller.yaml`**: Installiert und konfiguriert den Nginx-Controller, der als Eingangstor für den gesamten HTTP/HTTPS-Traffic fungiert.
-*   **`ingress.yaml`**: Definiert die Routing-Regeln (z. B. Hostnamen und Pfade), um Anfragen an die richtigen Services (z. B. Frontend oder API) weiterzuleiten.
-
-### 📂 k8s/argocd/ (GitOps-Konfiguration)
-Steuert die automatisierte Bereitstellung durch ArgoCD.
-
-*   **`applications/*.yaml`** *(z. B. frontend-app.yaml)*: Weist ArgoCD an, ein bestimmtes Verzeichnis im Git-Repository zu überwachen und Änderungen automatisch in das Cluster zu synchronisieren.
-*   **`argocd-install.yaml`**: Das Installationsmanifest, um ArgoCD selbst im Cluster bereitzustellen.
-
-### 📂 k8s/monitoring/ (Skalierung)
-*   **`hpa.yaml`**: (Horizontal Pod Autoscaler) Überwacht die CPU-Auslastung und passt die Anzahl der Pods automatisch an die aktuelle Last an.
-
-### 📂 k8s/secrets/ (Sicherheit)
-*   **`README.md`**: Enthält Anweisungen zum manuellen Erstellen von Secrets, da sensible Daten wie Passwörter und API-Keys nicht im Git-Repository gespeichert werden dürfen.
-
-
-# Kubernetes Manifests Übersicht
 
 | Kategorie | Komponente | Beschreibung der Dateien |
 |-----------|------------|--------------------------|
@@ -1413,8 +1343,6 @@ kubectl apply -f weather-service-app.yaml
 
 - GitHub Repository: https://github.com/gitlilia-tbz/ICTNE24_Semesterarbeit4_L.M
 - 
-- GitHub Repository: [https://github.com/gitlilia-tbz/ICTNE24_Semesterarbeit3_L.M](https://github.com/gitlilia-tbz/ICTNE24_Semesterarbeit3_L.M)
-
 ## 6.2 Verwendete Technologien
 
 *Technologie-Liste wird hier eingefügt*
