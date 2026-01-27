@@ -1392,7 +1392,14 @@ kubectl apply -f weather-service-app.yaml
 
 ## 5.1 Erreichte Ziele
 
-*Erreichte Ziele werden hier dokumentiert*
+- EC2 Instanz aufsetzen
+- Security Group einstellen
+- Kubernetes Installlieren und ArgoCD Installieren
+- Alle Manifests erstellen
+- Alle Images für Dockerhub generieren
+- Mich erfolgreich im ArgoCD einloggen und mein repo verbinden
+- Die Microservices im ArgoCD hochfahren und healthy Service-Status erreichen
+- Die Microservices nutzen und Fehler beheben
 
 ## 5.2 Herausforderungen
 
@@ -1446,6 +1453,7 @@ kubectl apply -f weather-service-app.yaml
 - **Kubernetes (K3s)** v1.34.3 - Container-Orchestrierung ⎈
 - **ArgoCD** - GitOps Deployment & Monitoring 🔄
 - **Nginx Ingress Controller** - Load Balancing & Routing ⚡
+-  **kubectl** - Kubernetes CLI
 
 ### 🗄️ Backend & Datenbank
 - **Python** 🐍 3.9 - Programmiersprache
@@ -1460,10 +1468,7 @@ kubectl apply -f weather-service-app.yaml
 - **React/Vue.js** ⚛️ - Benutzeroberfläche
 - **Nginx** - Web-Server
 
-### 🚀 DevOps & CI/CD
-- **GitHub** - Versionskontrolle & Repository
-- **GitHub Actions** - CI/CD Pipeline
-- **kubectl** - Kubernetes CLI
+
 
 ### 🌐 APIs & Services
 - **OpenWeatherMap API** ☁️ - Wetterdaten-Integration
