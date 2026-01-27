@@ -1396,15 +1396,40 @@ kubectl apply -f weather-service-app.yaml
 
 ## 5.2 Herausforderungen
 
-*Herausforderungen werden hier dokumentiert*
+**Erreichbarkeit ArgoCD -> Portweiterleitung**
+- 🚩**Problem:** ArgoCD war unter der direkten Adresse http://72.44.53.164:8080/ nicht erreichbar
+- 🔨**Impact:**
+- ✅**Lösung:**
 
+**Komplexität Microservices und Kubernetes-Funktionalitäten**
+- 🚩**Problem:**
+- 🔨**Impact:**
+- ✅**Lösung:**
+  
+**Auswahl KI-Assistent**
+- 🚩**Problem:**
+- 🔨**Impact:**
+- ✅**Lösung:**
+  
 ## 5.3 Lessons Learned
 
-*Lessons Learned werden hier dokumentiert*
+🛠️​Technisch:
+
+🔄DevOps:
+
+
+📋​Projektmanagement:
+
+🥏​Fazit: 
 
 ## 5.4 Ausblick
 
-*Ausblick wird hier dokumentiert*
+***Zukünftige Entwicklungen und Verbesserungsmöglichkeiten...***
+
+-
+-
+-
+-
 
 ---
 
