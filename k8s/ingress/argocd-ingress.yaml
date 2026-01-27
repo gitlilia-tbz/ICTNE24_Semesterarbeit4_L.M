@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-server-ingress
+  namespace: argocd
+  annotations:
+    # Die ArgoCD UI wird über HTTPS ausgeliefert, also sagen wir Nginx,
+    # dass es mit dem Backend-Service über HTTPS sprechen soll.
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: argocd.72-44-53-164.sslip.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              # Der Port auf dem argocd-server Service, der HTTPS bereitstellt
+              number: 443
+
