@@ -18,7 +18,7 @@
 
 **Studierende:** Lilia Mechani | **Semester:** 4 | **Dozenten:** (PRJ) Corrado Parisi (CNC) Philip Stark.
 
-[🚀 Live Demo](http://52.202.224.208/) • [📖 Repo](https://github.com/gitlilia-tbz/ICTNE24_Semesterarbeit3_L.M) • [🏗️ KanBan](https://semesterarbeit3liliam.atlassian.net/jira/software/projects/KAN/boards/1)
+[🚀 Live Demo](http://72.44.53.164:30080/) • [📖 Repo](https://github.com/gitlilia-tbz/ICTNE24_Semesterarbeit4_L.M) • [🏗️ KanBan](https://semesterarbeit3liliam.atlassian.net/jira/software/projects/KAN/boards/1)
 
 # Live Update:
 - Vollendung der Dokumentation: In Progress
@@ -1018,43 +1018,52 @@ kubectl get namespaces
 
 ### Repository Struktur
 ````
-k8s/
-├── apps/                           # Alle Microservices
-│   ├── frontend/
-│   │   ├── deployment.yaml         # Pod Definition + Container Image
-│   │   ├── service.yaml            # Internes Networking
-│   │   └── kustomization.yaml      # Optional: Config Management
-│   ├── user-service/               # Gleiche Struktur für jeden Service
-│   ├── workout-service/
-│   ├── stats-service/
-│   └── weather-service/
+📂 k8s/
+├── 📂 apps/
+│   ├── 📂 frontend/
+│   │   ├── 📄 deployment.yaml
+│   │   ├── 📄 service.yaml
+│   │   └── 📄 kustomization.yaml
+│   ├── 📂 user-service/
+│   │   ├── 📄 deployment.yaml
+│   │   └── 📄 service.yaml
+│   ├── 📂 workout-service/
+│   │   ├── 📄 deployment.yaml
+│   │   └── 📄 service.yaml
+│   ├── 📂 stats-service/
+│   │   ├── 📄 deployment.yaml
+│   │   └── 📄 service.yaml
+│   └── 📂 weather-service/
+│       ├── 📄 deployment.yaml
+│       └── 📄 service.yaml
 │
-├── database/                       # PostgreSQL
-│   ├── postgres-deployment.yaml    # Database Pod
-│   ├── postgres-service.yaml       # Database Service
-│   ├── postgres-pvc.yaml           # Persistent Storage
-│   ├──postgres-configmap.yaml      # init.sql
-|   └──postgres-secret.yaml         # DB Credentials
+├── 📂 database/
+│   ├── 📄 postgres-deployment.yaml
+│   ├── 📄 postgres-service.yaml
+│   ├── 📄 postgres-pvc.yaml
+│   ├── 📄 postgres-configmap.yaml
+│   └── 📄 postgres-secret.yaml
 │
-├── ingress/                        # Externes Routing
-│   ├── ingress.yaml                # Traffic Regeln (welcher Host → welcher Service)
-│   └── nginx-ingress-controller.yaml
+├── 📂 ingress/
+│   ├── 📄 ingress.yaml
+│   └── 📄 nginx-ingress-controller.yaml
 │
-├── argocd/                         # GitOps Konfiguration
-│   ├── applications/               # ArgoCD Apps (eine pro Service)
-│   │   ├── frontend-app.yaml
-│   │   ├── user-service-app.yaml
-│   │   └── ...
-│   └── argocd-install.yaml
+├── 📂 argocd/
+│   ├── 📂 applications/
+│   │   ├── 📄 database-app.yaml
+│   │   ├── 📄 frontend-app.yaml
+│   │   ├── 📄 stats-service-app.yaml
+│   │   ├── 📄 user-service-app.yaml
+│   │   ├── 📄 weather-service-app.yaml
+│   │   └── 📄 workout-service-app.yaml
+│   └── 📄 argocd-install.yaml
 │
-├── monitoring/                     # Auto-Scaling
-│   └── hpa.yaml                    # Horizontal Pod Autoscaler Regeln
+├── 📂 monitoring/
+│   └── 📄 hpa.yaml
 │
-├── secrets/                        # Sensitive Daten (NICHT in Git!)
-│   └── README.md
-│
-├── .gitignore                      # Verhindert Secrets-Commit
-└── README.md                       # Projektdokumentation
+└── 📂 secrets/
+    └── 📄 README.md
+
 ````
 
 
@@ -1116,15 +1125,16 @@ docker push gitlilia/trackmygym-nginx:v1.0.0
 ## 3.4 YAML Files
 
 ### Kubernetes Manifests
-# Kubernetes Manifests Übersicht
 
-| Kategorie | Komponente | Dateien |
-|-----------|------------|---------|
-| **1. PostgreSQL (Database)** | Database | • Deployment / StatefulSet<br>• Service<br>• PersistentVolumeClaim (Speicher)<br>• ConfigMap (init.sql)<br>• Secret (DB Passwort) |
-| **2. Microservices** | Frontend<br>User Service<br>Workout Service<br>Stats Service<br>Weather Service | • deployment.yaml<br>• service.yaml<br><br>*(pro Service)* |
-| **3. Nginx Ingress** | Ingress Controller | • ingress.yaml (mit sslip.io)<br>• nginx-ingress-controller.yaml |
-| **4. ArgoCD Applications** | GitOps | • frontend-app.yaml<br>• user-service-app.yaml<br>• workout-service-app.yaml<br>• stats-service-app.yaml<br>• weather-service-app.yaml<br>• database-app.yaml |
-| **5. Monitoring** | Auto-Scaling | • HPA (Horizontal Pod Autoscaler) |
+| Kategorie | Komponente | Beschreibung der Dateien |
+|-----------|------------|--------------------------|
+| **1. Applikations-Workloads** | 📂 `apps/`<br>*(Frontend, Services)* | • `deployment.yaml`: Definiert Zustand, Image & Replikate<br>• `service.yaml`: Ermöglicht interne Kommunikation<br>• `kustomization.yaml`: Verwaltet Konfigurationsanpassungen |
+| **2. Datenbank-Infrastruktur** | 📂 `database/`<br>*(PostgreSQL)* | • `postgres-deployment.yaml`: Startet den DB-Container<br>• `postgres-service.yaml`: Exponiert Port 5432 intern<br>• `postgres-pvc.yaml`: Sichert dauerhaften Speicherplatz<br>• `postgres-configmap.yaml`: Initialisiert DB-Struktur (init.sql) |
+| **3. Externer Zugriff** | 📂 `ingress/` | • `nginx-ingress-controller.yaml`: Installiert das Eingangstor<br>• `ingress.yaml`: Definiert Routing-Regeln & Hosts |
+| **4. GitOps-Konfiguration** | 📂 `argocd/` | • `applications/*.yaml`: Automatisiert Deployment via ArgoCD<br>• `argocd-install.yaml`: Installationsmanifest für ArgoCD |
+| **5. Skalierung** | 📂 `monitoring/` | • `hpa.yaml`: Skaliert Pods basierend auf CPU-Last |
+| **6. Sicherheit** | 📂 `secrets/` | • `README.md`: Anleitung zur manuellen Secret-Erstellung (Keine Credentials im Git!) |
+
 
 ## 3.5 Produktionsumgebung
 
