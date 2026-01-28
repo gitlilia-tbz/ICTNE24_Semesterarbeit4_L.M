@@ -41,7 +41,7 @@ Argo CD: http://72.44.53.164:8080
   * [1.6.2 Sprint 2](#162-sprint-2)
   * [1.6.3 Sprint 3](#163-sprint-3)
 
-* [1.7 Projekt Gantt-Diagramm](#17-projekt-gantt-diagramm)
+* [1.7 Projekt Kalender](#17-projekt-kalender)
 
 ### [2. 🛠️ Technische Dokumentation](#2-️-technische-dokumentation)
 
@@ -308,11 +308,7 @@ damit ich **meine Stakeholder den Fortschritt mitverfolgen können und ich Über
 - Projektkonzipierung wurde erstellt
 - Erster Entwurf für das Technische Design wurde erstellt
 
-![alt text](images/image-2.png)
-*_KanBan Angfangs Sprint_
-
-![alt text](images/image-3.png)
-*_KanBan Ende Sprint_
+![alt text](images/sprint1_ende.png)
 
 #### 🏔️​ **Herausforderungen**
 
@@ -598,10 +594,10 @@ damit ich den Dozenten die Bewertung meines Projektes ermögliche.
 
 | Aufgabe                  | Status              |
 | -------------------------- | --------------------- |
-| User Story 8 | In Progress |
-| User Story 9       | In Progress         |
-| User Story 10    | In Progress      |
-| User Story 11    | In Progress       |
+| User Story 8 | Done |
+| User Story 9       | Done         |
+| User Story 10    | Done     |
+| User Story 11    | Done      |
 
 
 
@@ -613,6 +609,7 @@ damit ich den Dozenten die Bewertung meines Projektes ermögliche.
 
 - Repo vollendet
 - Präsentation vorbereitet
+- Probelauf geübt
 - Cross-Check mit Klassenkameraden durchgeführt
 
 
@@ -621,10 +618,19 @@ damit ich den Dozenten die Bewertung meines Projektes ermögliche.
 #### 🏔️​ **Herausforderungen**
 
 - Zeitverschiebung Sprint 2 auf Sprint 3
+- Leichte vereinsamung während der Arbeit
+- Schwierige Ideen-Sammlung / Konzipierung für die PowerPoint Präsentation
+- Verschiedene Design-Philosophien innerhalb der Lerngemeinschaft
+- Arbeitsabfolge hat weniger Sinn gemacht im Vergleich zu den anderen Sprint-Phasen
 
 #### 📚​ **Lessons Learned**
 
-- 
+Ich habe unterschätzt wie wichtig es ist, in der Gruppe zu arbeiten. Mental geht es mir bessser wenn ich unter Menschen sein kann und meine Arbeit in der Lerngemeinschaft abwickeln kann, da man sich sporradisch miteinander austauschen kann.
+Dies ist für die eigene mentale Gesundheit wertvoll sowie für die Qualität der Arbeit an sich.
+
+Jedoch konnte ich gegen Ende der Arbeit einen kurzen und effektiven Austausch mit meiner Lerngemeinschaft führen, welcher mich zusätzlich motivieren konnte.
+
+Zudem habe ich gelernt, für die Zukunft eine konkretere Reihenfolge für den administrativen Abschluss der Semesterarbeit zu gestalten, damit sich das Ende der Semesterarbeit weniger chaotisch anfühlt.
 
 ---
 
@@ -633,12 +639,12 @@ damit ich den Dozenten die Bewertung meines Projektes ermögliche.
 
 | **📈 More Of**                                                                                                                                                                                             | **📉 Less Of**                                                                                       | **✅ Keep Doing**                                                                                                                                                       | **🛑 Stop Doing**                                                                                                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **...**<br>• ... <br> | **...**<br>• ... | **...** <br>• .... <br><br>** ...** | ***...***<br>
+| **Verbesserungsvorschläge bei meinen Dozenten einholen, mehr Zeit für Präsentationsdesign einplanen**<br> | **Chaotische Reihenfolge der Aufgaben**<br>| **Repo-Stil beibehalten, übersichtliche Struktur beibehalten** <br>  | ***Alleine arbeiten ohne Freunde oder Gemeinschaft***<br>
 
 
-## 1.7 Projekt Gantt-Diagramm
+## 1.7 Projekt Kalender
 
-*Gantt-Diagramm wird hier eingefügt*
+https://liliamechani.atlassian.net/jira/software/projects/SCRUM/boards/1/calendar
 
 ---
 
@@ -1358,6 +1364,17 @@ kubectl apply -f weather-service-app.yaml
 
 ## 5.2 Herausforderungen
 
+#### Technische Herausforderungen
+
+Aus Technischer sicht ist die Migration von Docker zu Kubernetes Sinnvoll, wenn die User-Basis entsprechend gross ist und Fail-over Mechanismen dadurch wichtiger werden.
+
+Jedoch wächst dadurch die komplexität der Lösung, da die vorherigen Daten für das Deployment via Kubernetes zuerst fit und kompatibel gemacht werden müssen.
+
+Somit hat mein Netzwerk und die Datenstruktur sowie das lernen der Syntax / der Befehle an ordentlicher Grösse zugenommen.
+Dies hat den Nachteil mit sich gebracht, das mein Verständnis für das Netzwerk-Design dieser Lösung abgenommen hat und ich immer mehr an meinem KI-Assistenten das Zepter abgeben musste.
+
+Dies hat mich im Troubleshooting verunsichert, da ich zu gewissen Problemen (noch) nur Workarounds und keine standfesten Lösungen gefunden habe, welche für eine wirklich produktive Landschaft in Frage kommen.
+
 **Erreichbarkeit ArgoCD -> Portweiterleitung**
 - 🚩**Problem:** ArgoCD war unter der direkten Adresse http://72.44.53.164:8080/ nicht erreichbar
 - 🔨**Impact:** Es wurde ein erheblicher Mehraufwand betrieben, da die Netzwerktechnische Struktur im Back-end an Komplexität zugenommen hat und ich mich mehr and die KI stüzen musste.
@@ -1366,40 +1383,67 @@ kubectl apply -f weather-service-app.yaml
 nohup kubectl port-forward svc/argocd-server -n argocd 8080:80 --address 0.0.0.0 > /tmp/argocd-portforward.log 2>&1 &
 ````
 
-**Komplexität Microservices und Kubernetes-Funktionalitäten**
-- 🚩**Problem:**
-- 🔨**Impact:**
-- ✅**Lösung:**
+Die Auswahl des KI-Assistenten war auch eine relevante Komponente für dieses Projekt, da bei dieser Grössenordnung ein herkömmlicher KI-Assistent nicht mehr mithalten konnte.
+Man hat schneller komplexere Gespräche geführt und hat länger für gewisse Prozesse gebraucht.
   
 **Auswahl KI-Assistent**
-- 🚩**Problem:**
-- 🔨**Impact:**
-- ✅**Lösung:**
+- 🚩**Problem:** KI-Assistent Claude hat Chat-Kontingent schneller aufgebraucht aufgrund Konversations-Länge
+- 🔨**Impact:** Gewisse KI-Assistenten haben zu schnell den Geist aufegeben (Tokens / Chat-Kontingent aufgebraucht) da das Projekt an Grösse im Vergleich zur letzten Arbeit zugenommen hat.
+- ✅**Lösung:** Nach recherche hat es sich als sinnvoller ergeben, einen KI-Assistenten zu nutzen, der sich innerhalb eines IDE's befindet. Dieser kann direkt auf die vollständige Codebase zugreifen und diese lesen sowie analysieren.
+Somit wird Chat-Kontingent weniger schnell aufgebraucht, da das prompting gegenüber des Assistenten kürzer wird. Der Assistent kann den Kontext direkt aus der Codebase lesen und anwenden.
+In diesem Fall, habe ich mich für Claude Code entschieden.
   
-**Persönlicher Zeitdruck und challenges**
-- 🚩**Problem:**
-- 🔨**Impact:**
-- ✅**Lösung:**
+
+#### Persönliche Herausforderungen
   
 ## 5.3 Lessons Learned
 
 🛠️​Technisch:
 
-🔄DevOps:
+In diesem Projekt konnte ich näher kennenlernen, wie Dockerhub, Kubernetes, EC2 und ArgoCD miteinander harmonieren. 
 
+Ich habe gelernt, wie man DockerHub einsetzt um die images zu erstellen, welche anschliessend von Kubernetes und ArgoCD eingesetzt werden.
+Dies hat prima an meine Semesterarbeit 3 angeknüpft, da ich die Datenquellen aus meinen YAML Files der letzten Semesterarbeit einsetzen konnte.
 
 📋​Projektmanagement:
 
-🥏​Fazit: 
+Durch die Verbesserungsvorschläge meiner Dozenten habe ich mit mehr Übersicht über die Funktionalitäten innerhalb Jira Kanban geschafft.
+
+- Das Einstellen der Time-Estimates
+- Das korrekte einsetzten der Sprint-Cycles
+- Der Übersicht innerhalb des Kalenders
+- Die Unterteilung der User-Stories und der Epics
+- Sowie dem allgemeinen Verwalten und pflegen eines sauberen Jira-Environments.
+
+Umso wichtiger ist es, die grundsteine für die Projektplanung so früh wie möglich zu legen, damit man bei unvorhersehbaren Situationen genug Struktur hat, um Zeitversetzt weiter zu machen.
+
+🥏Persönliches ​Fazit: 
+
+Durch die Zeitliche Verschiebung sowie Challenges im Persönlichen Leben konnte ich aktiv üben wie es ist, mit Ausnahmesituationen umzugehen.
+Schicksalsschläge sind nicht immer einfach und können jegliche Planung schwierig gestalten.
+Jedoch war ich froh um den Austausch mit meinen Dozenten und den Austausch gegen Ende Sprint 2 und Anfang Sprint 3.
+Fast alle Verbesserungsvorschläge konnte ich rechtzeitig in die Wege leiten und anschliessend in eine erfolgreiche und funktionale Lösung umsetzten, welche einsatzbereit ist.
+Dadurch konnte ich mir auch selbst beweisen das ich trotz Krisensituationen mit konkreter und gezieler Kommunikation an meine Ziele kommen kann.
+
+Die neue Grössenordnung des Projektes sowie das ausprobieren der (für mich) neuen Technologien hat mir Spass bereites.
+Es war ein ausseordentlich schönes Erfolgsgefühl erneut auf meine Microservices zugreifen zu können.
+
+Zudem hat das anknüpfen an meine letzte Semesterarbeit super geklappt. Meine Codebase hat sich als ein super Quelle für mein jetziges Projekt erwiesen.
+---
+
 
 ## 5.4 Ausblick
 
 ***Zukünftige Entwicklungen und Verbesserungsmöglichkeiten...***
 
--
--
--
--
+- Grundsteine im Jira so früh wie möglich setzen und zu aller erst mit den Dozenten in einem Review kontrollieren
+- Zeit einplanen, um konkrete Lastentests für Kubernetes zu konzipieren
+- Bufferzeiten frühzeitig einplanen und die Projekplanung dementsprechend designen
+- Mehr übersicht über die Netzwerkinfrastruktur, konkretes Netzwerk-Konzept und Planung für jegliche Port-zuteilungen und Domänen-Namen. Ergo, konkretes Netzwerkdesign.
+
+Ich konnte durch dieses Projekt viel Erfahrung sammeln und vielen unter Zeitdruck erfolgreich umsetzen.
+
+Druch diese Erfahrung kann ich meine neuen Skills für zukünftige Projekte einsetzen. Ich habe mehr Mut, neue Lösungen zu erwägen, zeiteffektiv zu arbeiten und mich näher mit meinen Werkzeugen ausseinander zu setzen. Vorallem meinem IDE bin ich näher gekommen, indem ich neue Extensions und Assistenten eingesetzt habe. Dies hat mir grossen Spass bereitet.
 
 ---
 
@@ -1541,4 +1585,10 @@ Mermaid Diagramming Tool: https://mermaid.js.org/
  🏨Technische Berufsschule Zürich TBZ (Höhere Fachschule)
 
 📫Ausstellungsstrasse 70, 8005 Zürich
+
+- Danksagung
+
+Ich bedanke mich bei meiner Familie, welche während schwierigen Zeiten zusammengehalten hat. Ich bedanke mich bei meiner Mutter sowohl als auch bei meinem Bruder, welcher viel Stärke und Geduld gezeigt hat.
+
+Sowohl als auch bedanke ich mich bei meiner Lerngemeinschaft hier an der TBZ sowie bei meinen Dozenten Corrado und Philip.
 
