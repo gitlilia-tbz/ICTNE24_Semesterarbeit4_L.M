@@ -1429,10 +1429,11 @@ Die neue Grössenordnung des Projektes sowie das ausprobieren der (für mich) ne
 Es war ein ausseordentlich schönes Erfolgsgefühl erneut auf meine Microservices zugreifen zu können.
 
 Zudem hat das anknüpfen an meine letzte Semesterarbeit super geklappt. Meine Codebase hat sich als ein super Quelle für mein jetziges Projekt erwiesen.
+
 ---
 
 
-## 5.4 Ausblick
+## 5.4 Ausblick  🌳
 
 ***Zukünftige Entwicklungen und Verbesserungsmöglichkeiten...***
 
