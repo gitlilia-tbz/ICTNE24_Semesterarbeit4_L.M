@@ -20,6 +20,10 @@
 
 [🚀 Live Demo](http://72.44.53.164:30080/) • [📖 Repo](https://github.com/gitlilia-tbz/ICTNE24_Semesterarbeit4_L.M) • [🏗️ KanBan](https://semesterarbeit3liliam.atlassian.net/jira/software/projects/KAN/boards/1)
 
+Argo CD: http://72.44.53.164:8080
+
+
+
 # Live Update:
 - Vollendung der Dokumentation: In Progress
 
@@ -53,8 +57,7 @@
 
 ### [4. 🧪 Testing & Qualitätssicherung](#4--testing--qualitätssicherung)
 
-* [4.1 User-Testing](#41-user-testing)
-* [4.2  10 Testfälle](#42-10-testfälle)
+* [4.1  10 Testfälle](#41-10-testfälle)
 
 ### [5. 📈 Ergebnisse & Reflexion](#5--ergebnisse--reflexion)
 
@@ -595,10 +598,10 @@ damit ich den Dozenten die Bewertung meines Projektes ermögliche.
 
 | Aufgabe                  | Status              |
 | -------------------------- | --------------------- |
-| User Story 8 | offen |
+| User Story 8 | In Progress |
 | User Story 9       | In Progress         |
-| User Story 10    | offen       |
-| User Story 11    | offen       |
+| User Story 10    | In Progress      |
+| User Story 11    | In Progress       |
 
 
 
@@ -608,21 +611,20 @@ damit ich den Dozenten die Bewertung meines Projektes ermögliche.
 
 ⭐​​**Was wurde erreicht?**
 
-- EC2 Instanz erstellt
-- ...
-- ...
+- Repo vollendet
+- Präsentation vorbereitet
+- Cross-Check mit Klassenkameraden durchgeführt
 
 
-*_KanBan Ende Sprint_
+![alt text](images\sprint3_ende.png)
 
 #### 🏔️​ **Herausforderungen**
 
-- ...
-
+- Zeitverschiebung Sprint 2 auf Sprint 3
 
 #### 📚​ **Lessons Learned**
 
-- ...
+- 
 
 ---
 
@@ -633,11 +635,6 @@ damit ich den Dozenten die Bewertung meines Projektes ermögliche.
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **...**<br>• ... <br> | **...**<br>• ... | **...** <br>• .... <br><br>** ...** | ***...***<br>
 
-#### **Ausblick auf Sprint 3**
-
-- ....
-- ...
-- ...
 
 ## 1.7 Projekt Gantt-Diagramm
 
@@ -1297,7 +1294,7 @@ echo
 
 ### Repo mit ArgoCD Verbinden
 
-ADD GIF HERE************************
+![alt text](images\argo_cd1.gif)
 
 ![alt text](images/image-22.png)
 
@@ -1311,65 +1308,23 @@ kubectl apply -f workout-service-app.yaml
 kubectl apply -f stats-service-app.yaml
 kubectl apply -f weather-service-app.yaml
 ````
+### Healthy Pods erreichbar
 
----
+![alt text](images/healthy_services.png)
+- frontend-app.yaml ✅
+- user-service-app.yaml ✅
+- workout-service-app.yaml ✅
+- stats-service-app.yaml ✅
+- weather-service-app.yaml ✅
+
+### Erfolgreicher Zugriff auf die Applikation
+![alt text](images/argo_cd2.gif)
+
+
 
 # 4. 🧪 Testing & Qualitätssicherung
 
-## 4.1 User-Testing
-
-**Benutzertests und Feedback:** Beta-Test
-
-📋 Beta-Test Phase Dokumentation
-
-
-
-**Zeitraum:** 3 Tage (6.7. - 8.7.2025)  
-**Testpersonen:** 2 (1 männlich/28J, 1 weiblich/31J) - beide sportlich aktiv  
-**Gesamtbewertung:** Sehr gut ⭐⭐⭐
-
----
-
-**👥 Testpersonen**
-- **S. (M, 28):** Kraftsportler, 5x/Woche Training
-- **M. (W, 31):** Kickboxen und Joggen, , 1x/Woche Training
----
-
-**✅ Positive Ergebnisse**
-- **Benutzerfreundlichkeit:** App ist übersichtlich und schnell bedienbar
-- **Weather-Feature:** Überraschend nützlich für Outdoor-Sport-Planung
-- **Design:** Moderne, ansprechende Optik
----
-
-**🔧 Feedback & Verbesserungswünsche seitens Probanten**
-
-| Feature | Priorität | Details |
-|---------|-----------|---------|
-| **Schrittzähler Integration** | Hoch | Beide wünschen tägliche Schritte-Tracking |
-| **Eigene Tagesziele** | Hoch | Personalisierte Trainings-/Kalorienziele definieren |
-| **Anpassbare Themes** | Mittel | Dark Mode und Farbthemen-Auswahl |
-| **Dauerhafte Verfügbarkeit** | Kritisch | App war 2x offline (AWS Learner Lab Problem) |
-
----
-
-**🐛 Identifizierte Probleme**
-- **Server Downtime:** App nicht erreichbar durch AWS Learner Lab Limitationen
-
----
-
-**🎯 Nächste Schritte**
-1. **Kritisch:** Vielleicht eine Migration zu stabilerer Cloud-Infrastruktur
-2. **Hoch:** Schrittzähler + Tagesziele implementieren
-3. **Mittel:** Theme-System mit Dark Mode oder weiteren Farben
-
-**Fazit:** App ist grundsätzlich sehr gut, braucht aber stabile Hosting-Lösung und erweiterte Personalisierung für Produktiveinsatz.
-
-+++ Feeback seitens Probanten:
-
-***"Nice", "Das einfache Dashboard gefällt mir mega" "Voll Geil", "Das Design gefällt mir"***
-
-
-## 4.2 10 Testfälle
+## 4.1 10 Testfälle
 
 | Test # | Wenn das... | Dann das... | Status |
 |--------|-------------|-------------|---------|
@@ -1405,8 +1360,11 @@ kubectl apply -f weather-service-app.yaml
 
 **Erreichbarkeit ArgoCD -> Portweiterleitung**
 - 🚩**Problem:** ArgoCD war unter der direkten Adresse http://72.44.53.164:8080/ nicht erreichbar
-- 🔨**Impact:**
-- ✅**Lösung:**
+- 🔨**Impact:** Es wurde ein erheblicher Mehraufwand betrieben, da die Netzwerktechnische Struktur im Back-end an Komplexität zugenommen hat und ich mich mehr and die KI stüzen musste.
+- ✅**Lösung:** Ich habe ein Workaround eingesetzt, indem ich für die Oberfläche einen temprorären Port-forward einstelle:
+````
+nohup kubectl port-forward svc/argocd-server -n argocd 8080:80 --address 0.0.0.0 > /tmp/argocd-portforward.log 2>&1 &
+````
 
 **Komplexität Microservices und Kubernetes-Funktionalitäten**
 - 🚩**Problem:**
@@ -1414,6 +1372,11 @@ kubectl apply -f weather-service-app.yaml
 - ✅**Lösung:**
   
 **Auswahl KI-Assistent**
+- 🚩**Problem:**
+- 🔨**Impact:**
+- ✅**Lösung:**
+  
+**Persönlicher Zeitdruck und challenges**
 - 🚩**Problem:**
 - 🔨**Impact:**
 - ✅**Lösung:**
